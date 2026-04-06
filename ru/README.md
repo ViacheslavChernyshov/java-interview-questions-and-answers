@@ -577,29 +577,29 @@ Every answer follows the same format:
 
 ## Quick Stats
 
-| Category | Questions |
-|---|---|
-| Databases SQL PostgreSQL | 21 |
-| Design Patterns | 16 |
-| Memory and Garbage Collection | 28 |
-| Collections | 31 |
-| Spring Spring Boot | 29 |
-| REST HTTP | 30 |
-| Exceptions | 28 |
-| Stream API | 29 |
-| Multithreading | 28 |
-| HashMap equals hashCode | 29 |
-| Transactions | 22 |
-| String | 23 |
-| Immutability | 29 |
-| Docker Kubernetes | 24 |
-| Kafka | 30 |
-| Hibernate JPA | 30 |
-| Microservices | 26 |
-| OOP and SOLID | 22 |
-| CompletableFuture and Asynchronicity | 27 |
-| Records and Generics | 27 |
-| **Total** | **~500** |
+| Category                             | Questions |
+| ------------------------------------ | --------- |
+| Databases SQL PostgreSQL             | 21        |
+| Design Patterns                      | 16        |
+| Memory and Garbage Collection        | 28        |
+| Collections                          | 31        |
+| Spring Spring Boot                   | 29        |
+| REST HTTP                            | 30        |
+| Exceptions                           | 28        |
+| Stream API                           | 29        |
+| Multithreading                       | 28        |
+| HashMap equals hashCode              | 29        |
+| Transactions                         | 22        |
+| String                               | 23        |
+| Immutability                         | 29        |
+| Docker Kubernetes                    | 24        |
+| Kafka                                | 30        |
+| Hibernate JPA                        | 30        |
+| Microservices                        | 26        |
+| OOP and SOLID                        | 22        |
+| CompletableFuture and Asynchronicity | 27        |
+| Records and Generics                 | 27        |
+| **Total**                            | **~500**  |
 
 ---
 

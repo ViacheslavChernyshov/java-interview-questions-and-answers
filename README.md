@@ -8,28 +8,28 @@ A comprehensive collection of **516 interview questions** for Middle Java Develo
 
 ## 📚 Table of Contents
 
-| # | Topic | Questions |
-|---|-------|-----------|
-| 20 | [Records & Generics](#20-records--generics) | 27 |
-| 19 | [CompletableFuture & Asynchrony](#19-completableFuture--asynchrony) | 28 |
-| 18 | [OOP & SOLID](#18-oop--solid) | 22 |
-| 17 | [Microservices](#17-microservices) | 26 |
-| 16 | [Hibernate / JPA](#16-hibernate--jpa) | 30 |
-| 15 | [Kafka](#15-kafka) | 30 |
-| 14 | [Docker / Kubernetes](#14-docker--kubernetes) | 24 |
-| 13 | [Immutability](#13-immutability) | 29 |
-| 12 | [String](#12-string) | 23 |
-| 11 | [Transactions](#11-transactions) | 22 |
-| 10 | [HashMap / equals / hashCode](#10-hashmap--equals--hashcode) | 29 |
-| 9 | [Concurrency](#9-concurrency) | 27 |
-| 8 | [Stream API](#8-stream-api) | 29 |
-| 7 | [Exceptions](#7-exceptions) | 29 |
-| 6 | [REST / HTTP](#6-rest--http) | 17 |
-| 5 | [Spring / Spring Boot](#5-spring--spring-boot) | 29 |
-| 4 | [Collections](#4-collections) | 30 |
-| 3 | [Memory & Garbage Collection](#3-memory--garbage-collection) | 28 |
-| 2 | [Design Patterns](#2-design-patterns) | 16 |
-| 1 | [Databases / SQL / PostgreSQL](#1-databases--sql--postgresql) | 21 |
+| #   | Topic                                                               | Questions   |
+| --- | ------------------------------------------------------------------- | ----------- |
+| 20  | [Records & Generics](#20-records--generics)                         | 27          |
+| 19  | [CompletableFuture & Asynchrony](#19-completableFuture--asynchrony) | 28          |
+| 18  | [OOP & SOLID](#18-oop--solid)                                       | 22          |
+| 17  | [Microservices](#17-microservices)                                  | 26          |
+| 16  | [Hibernate / JPA](#16-hibernate--jpa)                               | 30          |
+| 15  | [Kafka](#15-kafka)                                                  | 30          |
+| 14  | [Docker / Kubernetes](#14-docker--kubernetes)                       | 24          |
+| 13  | [Immutability](#13-immutability)                                    | 29          |
+| 12  | [String](#12-string)                                                | 23          |
+| 11  | [Transactions](#11-transactions)                                    | 22          |
+| 10  | [HashMap / equals / hashCode](#10-hashmap--equals--hashcode)        | 29          |
+| 9   | [Concurrency](#9-concurrency)                                       | 27          |
+| 8   | [Stream API](#8-stream-api)                                         | 29          |
+| 7   | [Exceptions](#7-exceptions)                                         | 29          |
+| 6   | [REST / HTTP](#6-rest--http)                                        | 17          |
+| 5   | [Spring / Spring Boot](#5-spring--spring-boot)                      | 29          |
+| 4   | [Collections](#4-collections)                                       | 30          |
+| 3   | [Memory & Garbage Collection](#3-memory--garbage-collection)        | 28          |
+| 2   | [Design Patterns](#2-design-patterns)                               | 16          |
+| 1   | [Databases / SQL / PostgreSQL](#1-databases--sql--postgresql)       | 21          |
 
 ---
 
@@ -613,12 +613,12 @@ A comprehensive collection of **516 interview questions** for Middle Java Develo
 
 ## 📊 Statistics
 
-| Metric | Value |
-|--------|-------|
-| **Total questions** | 516 |
-| **Total categories** | 20 |
-| **Each answer has** | 🟢 Junior + 🟡 Middle + 🔴 Senior |
-| **Language** | Russian (🇷🇺) |
+| Metric               | Value                          |
+| -------------------- | ------------------------------ |
+| **Total questions**  | 516                            |
+| **Total categories** | 20                             |
+| **Each answer has**  | 🟢 Junior + 🟡 Middle + 🔴 Senior |
+| **Language**         | Russian (🇷🇺)                   |
 
 ---
 
