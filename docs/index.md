@@ -145,6 +145,22 @@ alternates:
       <h3 class="card-title"><a href="{{ '/topics/docker-kubernetes-interview-questions/' | relative_url }}">Docker and Kubernetes interview questions</a></h3>
       <p>Images, containers, layers, volumes, deployments, probes, config management, rollout strategies, and scaling basics.</p>
     </article>
+    <article class="card">
+      <h3 class="card-title"><a href="{{ '/topics/transactions-interview-questions/' | relative_url }}">Transaction interview questions</a></h3>
+      <p>ACID, isolation levels, rollback rules, propagation, locking, MVCC, and transactional boundaries in backend services.</p>
+    </article>
+    <article class="card">
+      <h3 class="card-title"><a href="{{ '/topics/microservices-interview-questions/' | relative_url }}">Microservices interview questions</a></h3>
+      <p>Service boundaries, communication patterns, resilience, consistency, observability, and distributed trade-offs.</p>
+    </article>
+    <article class="card">
+      <h3 class="card-title"><a href="{{ '/topics/stream-api-interview-questions/' | relative_url }}">Stream API interview questions</a></h3>
+      <p><code>map</code>, <code>filter</code>, <code>reduce</code>, collectors, laziness, side effects, and performance trade-offs.</p>
+    </article>
+    <article class="card">
+      <h3 class="card-title"><a href="{{ '/topics/memory-garbage-collection-interview-questions/' | relative_url }}">Memory and garbage collection interview questions</a></h3>
+      <p>Heap, stack, generations, GC roots, memory leaks, pauses, references, and JVM runtime behavior.</p>
+    </article>
   </div>
 </section>
 

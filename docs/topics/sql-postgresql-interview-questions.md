@@ -50,6 +50,10 @@ image: /assets/social-preview/github-social-preview.png
       <p>A strong next step when moving from query foundations to ORM internals and persistence design.</p>
     </article>
     <article class="card">
+      <h3 class="card-title"><a href="{{ '/topics/transactions-interview-questions/' | relative_url }}">Transaction interview questions</a></h3>
+      <p>Useful when SQL discussions move into isolation levels, MVCC, locking, and consistency guarantees.</p>
+    </article>
+    <article class="card">
       <h3 class="card-title"><a href="{{ '/topics/rest-http-interview-questions/' | relative_url }}">REST and HTTP interview questions</a></h3>
       <p>Helpful when SQL-heavy backend roles also evaluate API design, pagination, and filtering contracts.</p>
     </article>

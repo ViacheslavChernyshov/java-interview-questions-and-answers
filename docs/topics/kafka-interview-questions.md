@@ -50,6 +50,10 @@ image: /assets/social-preview/github-social-preview.png
       <p>Helpful when the job includes running Kafka-based workloads in containerized environments.</p>
     </article>
     <article class="card">
+      <h3 class="card-title"><a href="{{ '/topics/microservices-interview-questions/' | relative_url }}">Microservices interview questions</a></h3>
+      <p>Natural next step when Kafka is discussed as part of service communication and distributed architecture.</p>
+    </article>
+    <article class="card">
       <h3 class="card-title"><a href="{{ '/topics/rest-http-interview-questions/' | relative_url }}">REST and HTTP interview questions</a></h3>
       <p>Useful if the role blends synchronous APIs with asynchronous event-driven integrations.</p>
     </article>

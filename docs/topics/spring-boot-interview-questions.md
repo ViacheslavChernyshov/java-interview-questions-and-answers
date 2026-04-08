@@ -50,6 +50,10 @@ image: /assets/social-preview/github-social-preview.png
       <p>Useful when Spring discussions move into ORM behavior, entity lifecycle, and persistence tuning.</p>
     </article>
     <article class="card">
+      <h3 class="card-title"><a href="{{ '/topics/transactions-interview-questions/' | relative_url }}">Transaction interview questions</a></h3>
+      <p>Useful when proxy behavior, rollback rules, and service-layer boundaries become the main interview focus.</p>
+    </article>
+    <article class="card">
       <h3 class="card-title"><a href="{{ '/topics/rest-http-interview-questions/' | relative_url }}">REST and HTTP interview questions</a></h3>
       <p>Helpful when the target role focuses on Spring MVC controllers, API contracts, and endpoint design.</p>
     </article>

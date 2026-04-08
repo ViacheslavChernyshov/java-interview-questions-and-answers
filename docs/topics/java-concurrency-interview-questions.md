@@ -50,6 +50,10 @@ image: /assets/social-preview/github-social-preview.png
       <p>Useful when concurrency knowledge is expected to extend into asynchronous event-driven processing.</p>
     </article>
     <article class="card">
+      <h3 class="card-title"><a href="{{ '/topics/stream-api-interview-questions/' | relative_url }}">Stream API interview questions</a></h3>
+      <p>Helpful when interviewers move from thread-safety into parallel streams, side effects, and shared-state pitfalls.</p>
+    </article>
+    <article class="card">
       <h3 class="card-title"><a href="{{ '/topics/docker-kubernetes-interview-questions/' | relative_url }}">Docker and Kubernetes interview questions</a></h3>
       <p>Helpful for roles where concurrent services also need to be operated under load in container environments.</p>
     </article>

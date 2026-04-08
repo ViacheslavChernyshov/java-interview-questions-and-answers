@@ -46,6 +46,10 @@ image: /assets/social-preview/github-social-preview.png
       <p>Useful when distributed services, event consumers, and platform operations are discussed together.</p>
     </article>
     <article class="card">
+      <h3 class="card-title"><a href="{{ '/topics/microservices-interview-questions/' | relative_url }}">Microservices interview questions</a></h3>
+      <p>Helpful because container orchestration questions often expand into service decomposition and runtime topology.</p>
+    </article>
+    <article class="card">
       <h3 class="card-title"><a href="{{ '/topics/spring-boot-interview-questions/' | relative_url }}">Spring Boot interview questions</a></h3>
       <p>Helpful because container questions often connect directly to how Spring services boot and expose health endpoints.</p>
     </article>
