@@ -1,6 +1,6 @@
 # Java Interview Questions
 
-A comprehensive collection of **~500 interview questions** covering all major topics for Senior Java Developer interviews. Each question includes answers structured across three levels: 🟢 Junior, 🟡 Middle, and 🔴 Senior.
+A comprehensive collection of **500+ interview questions** covering all major topics for Senior Java Developer interviews. Each question includes answers structured across three levels: 🟢 Junior, 🟡 Middle, and 🔴 Senior.
 
 ---
 

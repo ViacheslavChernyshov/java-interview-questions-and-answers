@@ -1,0 +1,13 @@
+.idea/
+*.iml
+
+.qwen/
+.playwright-cli/
+output/
+
+TRANSLATION_PROGRESS.md
+TRANSLATION_PROGRESS_UA.md
+
+eng/**/_PROGRESS.md
+eng/**/_translate.js
+eng/**/_batch_translate.py

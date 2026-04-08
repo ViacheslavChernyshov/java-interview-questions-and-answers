@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+    {% if page.alternates %}
+      {% for alt in page.alternates %}
+    <link rel="alternate" hreflang="{{ alt.lang }}" href="{{ alt.url | absolute_url }}">
+      {% endfor %}
+    {% endif %}
+    {% seo %}
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="{{ '/' | relative_url }}">Java Interview Questions</a>
+        <nav class="site-nav">
+          <a href="{{ '/' | relative_url }}">English</a>
+          <a href="{{ '/ru/' | relative_url }}">Russian</a>
+          <a href="{{ site.github.repository_url }}">GitHub</a>
+        </nav>
+      </header>
+
+      <main>
+        {{ content }}
+      </main>
+
+      <footer class="site-footer">
+        <p>Built from the <a href="{{ site.github.repository_url }}">GitHub repository</a>. GitHub Pages is the search-friendly site layer for the same Java interview content.</p>
+      </footer>
+    </div>
+  </body>
+</html>
+

@@ -1,22 +1,8 @@
-# Java Interview Questions and Answers
-
-A comprehensive collection of **500+ Java interview questions and answers** for **Junior, Middle, and Senior developers**. Covers **Spring Boot, Hibernate / JPA, SQL, PostgreSQL, Kafka, Docker, Kubernetes, Collections, Concurrency, Stream API, REST / HTTP, JVM memory, design patterns**, and other core backend topics.
-
-Use this repository to prepare for **Java backend interviews**, review key concepts quickly, or deepen knowledge topic by topic with structured answers at three levels: **🟢 Junior, 🟡 Middle, 🔴 Senior**.
-
-## Languages
-
-- English: [Full Java interview questions list](eng/README.md)
-- Russian: [Полный список вопросов по Java interview](ru/README.md)
-- Ukrainian: in progress
-
-## 🚀 Why This Repository
-
-- Covers the most common Java interview topics in one place
-- Organizes questions by topic, so it works both as a roadmap and a reference
-- Keeps every answer structured by level, from fundamentals to senior-level depth
+# Java Developer Interview Questions
 
 ## English
+
+A comprehensive collection of **500+ interview questions** for Middle Java Developer position, organized into **20 topic categories**. Each question has a detailed answer structured across three levels: 🟢 Junior, 🟡 Middle, 🔴 Senior.
 
 ---
 
@@ -25,7 +11,7 @@ Use this repository to prepare for **Java backend interviews**, review key conce
 | #   | Topic                                                               | Questions   |
 | --- | ------------------------------------------------------------------- | ----------- |
 | 20  | [Records & Generics](#20-records--generics)                         | 27          |
-| 19  | [CompletableFuture & Asynchrony](#19-completableFuture--asynchrony) | 28          |
+| 19  | [CompletableFuture & Asynchrony](#19-completablefuture--asynchrony) | 28          |
 | 18  | [OOP & SOLID](#18-oop--solid)                                       | 22          |
 | 17  | [Microservices](#17-microservices)                                  | 26          |
 | 16  | [Hibernate / JPA](#16-hibernate--jpa)                               | 30          |
@@ -632,47 +618,47 @@ Use this repository to prepare for **Java backend interviews**, review key conce
 | **Total questions**  | 500+                           |
 | **Total categories** | 20                             |
 | **Each answer has**  | 🟢 Junior + 🟡 Middle + 🔴 Senior |
-| **Languages**        | English, Russian                |
+| **Language**         | English                        |
 
 ---
 
 ## 📂 Folder Structure
 
 ```
-ru/
-├── 1. Базы данных SQL PostgreSQL/          (21 files)
-├── 2. Паттерны проектирования/             (16 files)
-├── 3. Память и Garbage Collection/         (28 files)
-├── 4. Коллекции/                           (30 files)
-├── 5. Spring Spring Boot/                  (29 files)
-├── 6. REST HTTP/                           (17 files)
-├── 7. Исключения/                          (29 files)
-├── 8. Stream API/                          (29 files)
-├── 9. Многопоточность/                     (27 files)
-├── 10. HashMap equals hashCode/            (29 files)
-├── 11. Транзакции/                         (22 files)
-├── 12. String/                             (23 files)
-├── 13. Иммутабельность/                    (29 files)
-├── 14. Docker Kubernetes/                  (24 files)
-├── 15. Kafka/                              (30 files)
-├── 16. Hibernate JPA/                      (30 files)
-├── 17. Микросервисы/                       (26 files)
-├── 18. ООП и SOLID/                        (22 files)
-├── 19. CompletableFuture и асинхронность/  (28 files)
-└── 20. Records и Дженерики/                (27 files)
+eng/
+├── 1. Databases SQL PostgreSQL/          (21 files)
+├── 2. Design Patterns/                   (16 files)
+├── 3. Memory and Garbage Collection/     (28 files)
+├── 4. Collections/                       (30 files)
+├── 5. Spring Spring Boot/                (29 files)
+├── 6. REST HTTP/                         (17 files)
+├── 7. Exceptions/                        (29 files)
+├── 8. Stream API/                        (29 files)
+├── 9. Multithreading/                    (27 files)
+├── 10. HashMap equals hashCode/          (29 files)
+├── 11. Transactions/                     (22 files)
+├── 12. String/                           (23 files)
+├── 13. Immutability/                     (29 files)
+├── 14. Docker Kubernetes/                (24 files)
+├── 15. Kafka/                            (30 files)
+├── 16. Hibernate JPA/                    (30 files)
+├── 17. Microservices/                    (26 files)
+├── 18. OOP and SOLID/                    (22 files)
+├── 19. CompletableFuture and Asynchrony/ (28 files)
+└── 20. Records and Generics/             (27 files)
 ```
 
 ---
 
 ## Russian Version
 
-Полная русская версия с перечнем тем и вопросов находится в файле [README.md](ru/README.md).
+The full Russian version with topic and question list is available in the [ru](../ru/) directory.
 
-Каждый файл содержит ответы трёх уровней сложности:
-- 🟢 **Junior** — простые объяснения, базовые концепции
-- 🟡 **Middle** — внутреннее устройство, типичные ошибки, практические нюансы
-- 🔴 **Senior** — глубокие технические детали, архитектурные решения, production-опыт
+Each file contains answers at three difficulty levels:
+- 🟢 **Junior** — simple explanations, basic concepts
+- 🟡 **Middle** — internals, common pitfalls, practical nuances
+- 🔴 **Senior** — deep technical details, architectural decisions, production experience
 
 ---
 
-*Generated: 2026-04-03*
+*Generated: 2026-04-08*
