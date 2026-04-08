@@ -46,9 +46,16 @@ image: /assets/social-preview/github-social-preview.png
       <p>Pairs well with concurrency because many interview traps involve collection behavior under concurrent access.</p>
     </article>
     <article class="card">
+      <h3 class="card-title"><a href="{{ '/topics/kafka-interview-questions/' | relative_url }}">Kafka interview questions</a></h3>
+      <p>Useful when concurrency knowledge is expected to extend into asynchronous event-driven processing.</p>
+    </article>
+    <article class="card">
+      <h3 class="card-title"><a href="{{ '/topics/docker-kubernetes-interview-questions/' | relative_url }}">Docker and Kubernetes interview questions</a></h3>
+      <p>Helpful for roles where concurrent services also need to be operated under load in container environments.</p>
+    </article>
+    <article class="card">
       <h3 class="card-title"><a href="{{ '/topics/spring-boot-interview-questions/' | relative_url }}">Spring Boot interview questions</a></h3>
       <p>Useful if the target role expects async execution, scheduling, or backend service orchestration.</p>
     </article>
   </div>
 </section>
-

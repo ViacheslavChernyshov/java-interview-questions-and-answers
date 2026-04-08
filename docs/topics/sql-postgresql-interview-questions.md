@@ -46,8 +46,12 @@ image: /assets/social-preview/github-social-preview.png
       <p>Useful because most Spring roles eventually connect ORM abstractions back to SQL behavior.</p>
     </article>
     <article class="card">
-      <h3 class="card-title"><a href="{{ site.github.repository_url }}/blob/master/README.md#16-hibernate--jpa">Hibernate and JPA questions on GitHub</a></h3>
+      <h3 class="card-title"><a href="{{ '/topics/hibernate-jpa-interview-questions/' | relative_url }}">Hibernate and JPA interview questions</a></h3>
       <p>A strong next step when moving from query foundations to ORM internals and persistence design.</p>
+    </article>
+    <article class="card">
+      <h3 class="card-title"><a href="{{ '/topics/rest-http-interview-questions/' | relative_url }}">REST and HTTP interview questions</a></h3>
+      <p>Helpful when SQL-heavy backend roles also evaluate API design, pagination, and filtering contracts.</p>
     </article>
   </div>
 </section>

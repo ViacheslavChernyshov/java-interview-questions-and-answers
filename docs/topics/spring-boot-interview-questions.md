@@ -46,9 +46,16 @@ image: /assets/social-preview/github-social-preview.png
       <p>Useful if the role combines Spring Boot with database-heavy backend work.</p>
     </article>
     <article class="card">
+      <h3 class="card-title"><a href="{{ '/topics/hibernate-jpa-interview-questions/' | relative_url }}">Hibernate and JPA interview questions</a></h3>
+      <p>Useful when Spring discussions move into ORM behavior, entity lifecycle, and persistence tuning.</p>
+    </article>
+    <article class="card">
+      <h3 class="card-title"><a href="{{ '/topics/rest-http-interview-questions/' | relative_url }}">REST and HTTP interview questions</a></h3>
+      <p>Helpful when the target role focuses on Spring MVC controllers, API contracts, and endpoint design.</p>
+    </article>
+    <article class="card">
       <h3 class="card-title"><a href="{{ '/topics/java-concurrency-interview-questions/' | relative_url }}">Java concurrency interview questions</a></h3>
       <p>Useful when the role expects async execution, thread pools, or high-load services.</p>
     </article>
   </div>
 </section>
-

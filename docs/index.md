@@ -74,17 +74,27 @@ alternates:
     <article class="card">
       <h3 class="card-title">Spring and transactions</h3>
       <p>Dependency injection, Spring Boot internals, proxies, transactional behavior, and propagation strategies.</p>
-      <p><a href="{{ '/topics/spring-boot-interview-questions/' | relative_url }}">Explore Spring and transactions</a></p>
+      <p><a href="{{ '/topics/spring-boot-interview-questions/' | relative_url }}">Explore Spring and transaction topics</a></p>
     </article>
     <article class="card">
       <h3 class="card-title">Persistence and data</h3>
       <p>SQL, PostgreSQL, indexes, MVCC, query optimization, Hibernate, JPA, lazy loading, locking, and caches.</p>
-      <p><a href="{{ '/topics/sql-postgresql-interview-questions/' | relative_url }}">Explore persistence topics</a></p>
+      <p><a href="{{ '/topics/hibernate-jpa-interview-questions/' | relative_url }}">Explore persistence and ORM topics</a></p>
+    </article>
+    <article class="card">
+      <h3 class="card-title">API and integration design</h3>
+      <p>REST, HTTP methods, idempotency, status codes, pagination, caching, contracts, and service integration.</p>
+      <p><a href="{{ '/topics/rest-http-interview-questions/' | relative_url }}">Explore API design topics</a></p>
     </article>
     <article class="card">
       <h3 class="card-title">Distributed backend systems</h3>
-      <p>Kafka, microservices, fault tolerance, observability, Docker, Kubernetes, and asynchronous processing.</p>
-      <p><a href="{{ '/topics/java-concurrency-interview-questions/' | relative_url }}">Explore distributed systems topics</a></p>
+      <p>Kafka, microservices, fault tolerance, observability, and asynchronous processing patterns.</p>
+      <p><a href="{{ '/topics/kafka-interview-questions/' | relative_url }}">Explore distributed systems topics</a></p>
+    </article>
+    <article class="card">
+      <h3 class="card-title">Containers and platform basics</h3>
+      <p>Docker images, Kubernetes Deployments, probes, configuration, scaling, and runtime operations.</p>
+      <p><a href="{{ '/topics/docker-kubernetes-interview-questions/' | relative_url }}">Explore container and platform topics</a></p>
     </article>
   </div>
 </section>
@@ -101,6 +111,7 @@ alternates:
 
 <section class="section">
   <h2>Featured topic pages</h2>
+  <p>Each topic page highlights representative interview questions, explains what interviewers usually test in that area, and links back to the full markdown section in the repository.</p>
   <div class="card-grid">
     <article class="card">
       <h3 class="card-title"><a href="{{ '/topics/spring-boot-interview-questions/' | relative_url }}">Spring Boot interview questions</a></h3>
@@ -117,6 +128,22 @@ alternates:
     <article class="card">
       <h3 class="card-title"><a href="{{ '/topics/sql-postgresql-interview-questions/' | relative_url }}">SQL and PostgreSQL interview questions</a></h3>
       <p>Indexes, JOINs, correlated subqueries, window functions, MVCC, VACUUM, ANALYZE, and query optimization.</p>
+    </article>
+    <article class="card">
+      <h3 class="card-title"><a href="{{ '/topics/hibernate-jpa-interview-questions/' | relative_url }}">Hibernate and JPA interview questions</a></h3>
+      <p>Entity lifecycle, persistence context, dirty checking, lazy loading, N+1 queries, flush behavior, and locking.</p>
+    </article>
+    <article class="card">
+      <h3 class="card-title"><a href="{{ '/topics/rest-http-interview-questions/' | relative_url }}">REST and HTTP interview questions</a></h3>
+      <p>HTTP methods, idempotency, status codes, pagination, error contracts, versioning, caching, and API design fundamentals.</p>
+    </article>
+    <article class="card">
+      <h3 class="card-title"><a href="{{ '/topics/kafka-interview-questions/' | relative_url }}">Kafka interview questions</a></h3>
+      <p>Topics, partitions, offsets, consumer groups, rebalancing, retention, delivery semantics, and idempotent consumers.</p>
+    </article>
+    <article class="card">
+      <h3 class="card-title"><a href="{{ '/topics/docker-kubernetes-interview-questions/' | relative_url }}">Docker and Kubernetes interview questions</a></h3>
+      <p>Images, containers, layers, volumes, deployments, probes, config management, rollout strategies, and scaling basics.</p>
     </article>
   </div>
 </section>
