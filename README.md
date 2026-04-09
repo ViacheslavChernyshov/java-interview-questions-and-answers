@@ -1,22 +1,57 @@
 # Java Interview Questions and Answers
 
-A comprehensive collection of **500+ Java interview questions and answers** for **Junior, Middle, and Senior developers**. Covers **Spring Boot, Hibernate / JPA, SQL, PostgreSQL, Kafka, Docker, Kubernetes, Collections, Concurrency, Stream API, REST / HTTP, JVM memory, design patterns**, and other core backend topics.
+> **500+ Java interview questions and answers** for **Junior, Middle, and Senior Java backend developers**.
+> Covers **Spring Boot, Hibernate / JPA, SQL, PostgreSQL, Kafka, Docker, Kubernetes, Collections, Concurrency, Stream API, REST / HTTP, JVM memory, design patterns, transactions, microservices**, and other high-frequency backend interview topics.
 
-Use this repository to prepare for **Java backend interviews**, review key concepts quickly, or deepen knowledge topic by topic with structured answers at three levels: **🟢 Junior, 🟡 Middle, 🔴 Senior**.
+This repository is built as a **practical Java backend interview preparation system**, not a random dump of prompts. It combines broad topic coverage, layered explanations, multilingual access, and search-friendly landing pages so you can revise fundamentals fast and still go deep where strong interviews usually get difficult.
+
+## Start Here
+
+- English landing page: [GitHub Pages / English](https://viacheslavchernyshov.github.io/java-interview-questions-and-answers/)
+- Russian landing page: [GitHub Pages / Russian](https://viacheslavchernyshov.github.io/java-interview-questions-and-answers/ru/)
+- Ukrainian landing page: [GitHub Pages / Ukrainian](https://viacheslavchernyshov.github.io/java-interview-questions-and-answers/uk/)
+- English repository version: [eng/README.md](eng/README.md)
+- Russian repository version: [ru/README.md](ru/README.md)
+- Ukrainian repository version: [ua/README.md](ua/README.md)
 
 ## Languages
 
 - English: [Full Java interview questions list](eng/README.md)
 - Russian: [Полный список вопросов по Java interview](ru/README.md)
-- Ukrainian: in progress
+- Ukrainian: [Повний список питань для Java interview](ua/README.md)
 
-## 🚀 Why This Repository
+## Why This Repository Stands Out
 
-- Covers the most common Java interview topics in one place
-- Organizes questions by topic, so it works both as a roadmap and a reference
+- Covers the most common Java backend interview topics in one place instead of scattering them across separate notes
+- Organizes questions by topic, so the repository works both as a roadmap and as a fast reference
 - Keeps every answer structured by level, from fundamentals to senior-level depth
+- Includes English, Russian, and Ukrainian public versions for easier study and wider reach
+- Adds GitHub Pages topic hubs for faster browsing, better internal linking, and stronger search visibility
 
-## English
+## Who This Helps
+
+- Java developers preparing for Junior, Middle, or Senior backend interviews
+- Engineers refreshing Spring Boot, JPA, SQL, Kafka, concurrency, or JVM internals
+- Mentors building structured interview-prep roadmaps for teammates
+- Candidates who prefer topic-by-topic repetition instead of scattered cheat sheets
+
+## Coverage Snapshot
+
+- **Core Java:** collections, HashMap, String, exceptions, Stream API, records, generics, immutability
+- **JVM internals:** memory, garbage collection, object lifetime, reachability, GC tooling
+- **Spring ecosystem:** DI, beans, proxies, AOP, transactions, Spring Boot internals
+- **Data layer:** SQL, PostgreSQL, indexes, MVCC, Hibernate, JPA, locking
+- **Distributed backend:** Kafka, microservices, retries, resilience, observability
+- **Infrastructure:** Docker, Kubernetes, health checks, configuration, rollout basics
+
+## How to Use This Repository
+
+- Pick one topic cluster that matches the role you are targeting, for example Spring Boot, SQL, Kafka, or Concurrency
+- Start from the section navigator and move in order, because many questions build on previous ones
+- Use the three-layer answer structure to calibrate how deep your own answer should sound in interviews
+- Switch between English, Russian, and Ukrainian versions depending on study comfort or publishing needs
+
+## English Question List
 
 ---
 
@@ -632,47 +667,36 @@ Use this repository to prepare for **Java backend interviews**, review key conce
 | **Total questions**  | 500+                           |
 | **Total categories** | 20                             |
 | **Each answer has**  | 🟢 Junior + 🟡 Middle + 🔴 Senior |
-| **Languages**        | English, Russian                |
+| **Languages**        | English, Russian, Ukrainian     |
+| **Formats**          | GitHub repository + GitHub Pages |
 
 ---
 
-## 📂 Folder Structure
+## 📂 Repository Structure
 
 ```
-ru/
-├── 1. Базы данных SQL PostgreSQL/          (21 files)
-├── 2. Паттерны проектирования/             (16 files)
-├── 3. Память и Garbage Collection/         (28 files)
-├── 4. Коллекции/                           (30 files)
-├── 5. Spring Spring Boot/                  (29 files)
-├── 6. REST HTTP/                           (17 files)
-├── 7. Исключения/                          (29 files)
-├── 8. Stream API/                          (29 files)
-├── 9. Многопоточность/                     (27 files)
-├── 10. HashMap equals hashCode/            (29 files)
-├── 11. Транзакции/                         (22 files)
-├── 12. String/                             (23 files)
-├── 13. Иммутабельность/                    (29 files)
-├── 14. Docker Kubernetes/                  (24 files)
-├── 15. Kafka/                              (30 files)
-├── 16. Hibernate JPA/                      (30 files)
-├── 17. Микросервисы/                       (26 files)
-├── 18. ООП и SOLID/                        (22 files)
-├── 19. CompletableFuture и асинхронность/  (28 files)
-└── 20. Records и Дженерики/                (27 files)
+README.md
+eng/    -> English markdown source
+ru/     -> Russian markdown source
+ua/     -> Ukrainian markdown source
+docs/   -> GitHub Pages SEO site
+assets/ -> social preview and supporting assets
+scripts/ -> local helper scripts
 ```
 
 ---
 
-## Russian Version
+## Language Versions
 
-Полная русская версия с перечнем тем и вопросов находится в файле [README.md](ru/README.md).
+- English repository version: [eng/README.md](eng/README.md)
+- Russian repository version: [ru/README.md](ru/README.md)
+- Ukrainian repository version: [ua/README.md](ua/README.md)
 
-Каждый файл содержит ответы трёх уровней сложности:
-- 🟢 **Junior** — простые объяснения, базовые концепции
-- 🟡 **Middle** — внутреннее устройство, типичные ошибки, практические нюансы
-- 🔴 **Senior** — глубокие технические детали, архитектурные решения, production-опыт
+Each file contains answers at three depth levels:
+- 🟢 **Junior** — simple explanations and the core idea
+- 🟡 **Middle** — internals, common pitfalls, and practical nuances
+- 🔴 **Senior** — deep technical details, architectural trade-offs, and production context
 
 ---
 
-*Generated: 2026-04-03*
+*Updated: 2026-04-09*

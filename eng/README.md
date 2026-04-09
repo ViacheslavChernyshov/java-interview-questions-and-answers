@@ -650,9 +650,11 @@ eng/
 
 ---
 
-## Russian Version
+## Language Versions
 
-The full Russian version with topic and question list is available in the [ru](../ru/) directory.
+- English version: [eng/README.md](README.md)
+- Russian version: [ru/README.md](../ru/README.md)
+- Ukrainian version: [ua/README.md](../ua/README.md)
 
 Each file contains answers at three difficulty levels:
 - 🟢 **Junior** — simple explanations, basic concepts
@@ -661,4 +663,4 @@ Each file contains answers at three difficulty levels:
 
 ---
 
-*Generated: 2026-04-08*
+*Updated: 2026-04-09*

@@ -9,6 +9,8 @@ alternates:
     url: /
   - lang: ru
     url: /ru/
+  - lang: uk
+    url: /uk/
   - lang: x-default
     url: /
 ---
@@ -39,6 +41,7 @@ alternates:
     <a class="button button-primary" href="{{ site.github.repository_url }}/blob/master/ru/README.md">Открыть русскую версию</a>
     <a class="button" href="{{ site.github.repository_url }}">GitHub repository</a>
     <a class="button" href="{{ '/' | relative_url }}">Open English landing page</a>
+    <a class="button" href="{{ '/uk/' | relative_url }}">Відкрити українську версію</a>
   </div>
 
   <div class="stats">
@@ -86,6 +89,10 @@ alternates:
       <p>Полная русская версия контента с тем же охватом основных тем.</p>
       <p><a href="{{ site.github.repository_url }}/blob/master/ru/README.md">Открыть русский README</a></p>
     </article>
+    <article class="card">
+      <h3 class="card-title">Українська</h3>
+      <p>Повна українська версія контенту з тим самим набором тем і рівнів відповіді.</p>
+      <p><a href="{{ '/uk/' | relative_url }}">Открыть украинскую landing page</a></p>
+    </article>
   </div>
 </section>
-

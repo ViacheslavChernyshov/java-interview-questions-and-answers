@@ -9,6 +9,8 @@ alternates:
     url: /
   - lang: ru
     url: /ru/
+  - lang: uk
+    url: /uk/
   - lang: x-default
     url: /
 ---
@@ -39,6 +41,7 @@ alternates:
     <a class="button button-primary" href="{{ site.github.repository_url }}">Open GitHub Repository</a>
     <a class="button" href="{{ site.github.repository_url }}/blob/master/README.md">Browse Full Question List</a>
     <a class="button" href="{{ '/ru/' | relative_url }}">Open Russian Version</a>
+    <a class="button" href="{{ '/uk/' | relative_url }}">Open Ukrainian Version</a>
   </div>
 
   <div class="stats">
@@ -177,6 +180,10 @@ alternates:
       <p>A complete alternate language version with the same overall interview coverage.</p>
       <p><a href="{{ site.github.repository_url }}/blob/master/ru/README.md">Open Russian repository version</a></p>
     </article>
+    <article class="card">
+      <h3 class="card-title">Ukrainian</h3>
+      <p>A complete Ukrainian version with the same 20-topic preparation structure and study flow.</p>
+      <p><a href="{{ site.github.repository_url }}/blob/master/ua/README.md">Open Ukrainian repository version</a></p>
+    </article>
   </div>
-  <p class="notice">Ukrainian can be added as a search-facing language later, but only after substantial content is published to avoid thin pages.</p>
 </section>
