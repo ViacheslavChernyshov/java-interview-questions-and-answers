@@ -13,10 +13,23 @@
     {% seo %}
   </head>
   <body>
+    {% assign answers_url = '/questions/' %}
+    {% assign home_url = '/' %}
+    {% assign answers_label = 'All Answers' %}
+    {% if page.lang == 'ru' %}
+      {% assign answers_url = '/ru/questions/' %}
+      {% assign home_url = '/ru/' %}
+      {% assign answers_label = 'Все ответы' %}
+    {% elsif page.lang == 'uk' %}
+      {% assign answers_url = '/uk/questions/' %}
+      {% assign home_url = '/uk/' %}
+      {% assign answers_label = 'Усі відповіді' %}
+    {% endif %}
     <div class="site-shell">
       <header class="site-header">
-        <a class="brand" href="{{ '/' | relative_url }}">Java Interview Questions</a>
+        <a class="brand" href="{{ home_url | relative_url }}">Java Interview Questions</a>
         <nav class="site-nav">
+          <a href="{{ answers_url | relative_url }}">{{ answers_label }}</a>
           <a href="{{ '/' | relative_url }}">English</a>
           <a href="{{ '/ru/' | relative_url }}">Russian</a>
           <a href="{{ '/uk/' | relative_url }}">Ukrainian</a>

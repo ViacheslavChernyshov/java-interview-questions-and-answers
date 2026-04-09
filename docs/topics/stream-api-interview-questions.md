@@ -11,7 +11,7 @@ image: /assets/social-preview/github-social-preview.png
   <h1>Stream API interview questions and answers.</h1>
   <p class="lede">Stream API questions are common in Java interviews because they test both language fluency and engineering judgment. This page focuses on the stream concepts that usually matter most: transformation pipelines, collectors, side effects, laziness, readability, and performance trade-offs.</p>
   <div class="hero-actions">
-    <a class="button button-primary" href="{{ site.github.repository_url }}/blob/master/README.md#8-stream-api">Browse Stream API section on GitHub</a>
+    <a class="button button-primary" href="{{ '/questions/08-stream-api/' | relative_url }}">Browse Stream API answers</a>
     <a class="button" href="{{ '/' | relative_url }}">Back to home</a>
   </div>
 </section>

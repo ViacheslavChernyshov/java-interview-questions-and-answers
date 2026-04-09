@@ -11,7 +11,7 @@ image: /assets/social-preview/github-social-preview.png
   <h1>Java concurrency interview questions and answers.</h1>
   <p class="lede">Concurrency questions are where many Java interviews become noticeably harder. This page highlights the concepts that usually matter most: memory visibility, synchronization, atomics, thread pools, deadlocks, and modern concurrency features such as virtual threads.</p>
   <div class="hero-actions">
-    <a class="button button-primary" href="{{ site.github.repository_url }}/blob/master/README.md#9-concurrency">Browse concurrency section on GitHub</a>
+    <a class="button button-primary" href="{{ '/questions/09-multithreading/' | relative_url }}">Browse concurrency answers</a>
     <a class="button" href="{{ '/' | relative_url }}">Back to home</a>
   </div>
 </section>

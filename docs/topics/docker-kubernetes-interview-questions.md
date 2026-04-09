@@ -11,7 +11,7 @@ image: /assets/social-preview/github-social-preview.png
   <h1>Docker and Kubernetes interview questions and answers.</h1>
   <p class="lede">Docker and Kubernetes questions appear when backend roles include delivery, platform awareness, or cloud-native operations. This page focuses on the container and orchestration concepts that are most useful for Java engineers preparing for modern production-focused interviews.</p>
   <div class="hero-actions">
-    <a class="button button-primary" href="{{ site.github.repository_url }}/blob/master/README.md#14-docker--kubernetes">Browse Docker and Kubernetes section on GitHub</a>
+    <a class="button button-primary" href="{{ '/questions/14-docker-kubernetes/' | relative_url }}">Browse Docker and Kubernetes answers</a>
     <a class="button" href="{{ '/' | relative_url }}">Back to home</a>
   </div>
 </section>

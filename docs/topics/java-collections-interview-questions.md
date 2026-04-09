@@ -11,7 +11,7 @@ image: /assets/social-preview/github-social-preview.png
   <h1>Java collections interview questions and answers.</h1>
   <p class="lede">Collections are foundational in Java interviews because they combine API knowledge, data structure trade-offs, algorithmic thinking, and practical coding decisions. This page highlights the collection topics that appear most often in backend interview loops.</p>
   <div class="hero-actions">
-    <a class="button button-primary" href="{{ site.github.repository_url }}/blob/master/README.md#4-collections">Browse collections section on GitHub</a>
+    <a class="button button-primary" href="{{ '/questions/04-collections/' | relative_url }}">Browse collections answers</a>
     <a class="button" href="{{ '/' | relative_url }}">Back to home</a>
   </div>
 </section>
@@ -51,4 +51,3 @@ image: /assets/social-preview/github-social-preview.png
     </article>
   </div>
 </section>
-

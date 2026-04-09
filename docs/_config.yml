@@ -3,6 +3,7 @@ description: 500+ Java interview questions and answers for Junior, Middle, and S
 lang: en
 url: https://viacheslavchernyshov.github.io
 baseurl: /java-interview-questions-and-answers
+repository: ViacheslavChernyshov/java-interview-questions-and-answers
 markdown: kramdown
 permalink: pretty
 plugins:

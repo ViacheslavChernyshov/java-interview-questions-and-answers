@@ -9,9 +9,9 @@ image: /assets/social-preview/github-social-preview.png
 <section class="hero">
   <span class="eyebrow">Topic Page</span>
   <h1>Spring Boot interview questions and answers.</h1>
-  <p class="lede">This topic page groups Spring Boot interview questions that show up often in backend interviews: dependency injection, bean lifecycle, proxies, AOP, transactional boundaries, configuration, and runtime behavior. It works best as a guided starting point before opening the full markdown repository.</p>
+  <p class="lede">This topic page groups Spring Boot interview questions that show up often in backend interviews: dependency injection, bean lifecycle, proxies, AOP, transactional boundaries, configuration, and runtime behavior. It works best as a guided starting point before opening the full answer section on the site.</p>
   <div class="hero-actions">
-    <a class="button button-primary" href="{{ site.github.repository_url }}/blob/master/README.md#5-spring--spring-boot">Browse Spring section on GitHub</a>
+    <a class="button button-primary" href="{{ '/questions/05-spring-spring-boot/' | relative_url }}">Browse Spring answers</a>
     <a class="button" href="{{ '/' | relative_url }}">Back to home</a>
   </div>
 </section>

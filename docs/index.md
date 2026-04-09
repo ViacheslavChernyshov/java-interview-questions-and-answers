@@ -38,8 +38,8 @@ alternates:
   </div>
 
   <div class="hero-actions">
-    <a class="button button-primary" href="{{ site.github.repository_url }}">Open GitHub Repository</a>
-    <a class="button" href="{{ site.github.repository_url }}/blob/master/README.md">Browse Full Question List</a>
+    <a class="button button-primary" href="{{ '/questions/' | relative_url }}">Browse Answer Library</a>
+    <a class="button" href="{{ site.github.repository_url }}">Open GitHub Repository</a>
     <a class="button" href="{{ '/ru/' | relative_url }}">Open Russian Version</a>
     <a class="button" href="{{ '/uk/' | relative_url }}">Open Ukrainian Version</a>
   </div>
@@ -106,9 +106,9 @@ alternates:
   <h2>How to use this repository effectively</h2>
   <ol class="topic-list">
     <li>Pick one cluster that matches the role you target, for example Spring Boot, concurrency, or SQL.</li>
-    <li>Read the question list in order, because related questions build on each other.</li>
+    <li>Open the site answer library and read the question list in order, because related questions build on each other.</li>
     <li>Use the three-level structure to calibrate your answer depth for different interview stages.</li>
-    <li>Return to the GitHub repository for the full markdown source and language navigation.</li>
+    <li>Use the GitHub repository when you want the raw markdown source or file-level navigation.</li>
   </ol>
 </section>
 

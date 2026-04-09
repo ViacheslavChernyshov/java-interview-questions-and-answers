@@ -1,5 +1,6 @@
 .idea/
 *.iml
+__pycache__/
 
 .qwen/
 .playwright-cli/
@@ -11,3 +12,7 @@ TRANSLATION_PROGRESS_UA.md
 eng/**/_PROGRESS.md
 eng/**/_translate.js
 eng/**/_batch_translate.py
+
+docs/questions/
+docs/ru/questions/
+docs/uk/questions/

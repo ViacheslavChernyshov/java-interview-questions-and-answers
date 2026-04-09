@@ -38,7 +38,7 @@ alternates:
   </div>
 
   <div class="hero-actions">
-    <a class="button button-primary" href="{{ site.github.repository_url }}/blob/master/ru/README.md">Открыть русскую версию</a>
+    <a class="button button-primary" href="{{ '/ru/questions/' | relative_url }}">Открыть библиотеку ответов</a>
     <a class="button" href="{{ site.github.repository_url }}">GitHub repository</a>
     <a class="button" href="{{ '/' | relative_url }}">Open English landing page</a>
     <a class="button" href="{{ '/uk/' | relative_url }}">Відкрити українську версію</a>
@@ -70,9 +70,9 @@ alternates:
   <h2>Как лучше использовать материал</h2>
   <ol class="topic-list">
     <li>Выберите один тематический блок под свою цель: например Spring Boot, SQL, concurrency или Hibernate.</li>
-    <li>Пройдите вопросы по порядку, потому что темы связаны и часто раскрываются слоями.</li>
+    <li>Откройте библиотеку ответов на сайте и проходите вопросы по порядку, потому что темы связаны и часто раскрываются слоями.</li>
     <li>Сверяйте свой ответ с тремя уровнями глубины, чтобы понимать, где вы звучите как Junior, Middle или Senior.</li>
-    <li>Используйте GitHub-репозиторий как основной источник markdown-контента и навигации по файлам.</li>
+    <li>Используйте GitHub-репозиторий, когда нужен исходный markdown-контент и навигация по файлам.</li>
   </ol>
 </section>
 

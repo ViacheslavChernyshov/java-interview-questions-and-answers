@@ -11,7 +11,7 @@ image: /assets/social-preview/github-social-preview.png
   <h1>SQL and PostgreSQL interview questions and answers.</h1>
   <p class="lede">Backend Java roles almost always touch SQL, and PostgreSQL questions show up often because they expose how well a candidate understands data access, performance, and transactional behavior. This page groups the most important interview themes from that area.</p>
   <div class="hero-actions">
-    <a class="button button-primary" href="{{ site.github.repository_url }}/blob/master/README.md#1-databases--sql--postgresql">Browse SQL and PostgreSQL section on GitHub</a>
+    <a class="button button-primary" href="{{ '/questions/01-databases-sql-postgresql/' | relative_url }}">Browse SQL and PostgreSQL answers</a>
     <a class="button" href="{{ '/' | relative_url }}">Back to home</a>
   </div>
 </section>

@@ -10,6 +10,9 @@ This repository is built as a **practical Java backend interview preparation sys
 - English landing page: [GitHub Pages / English](https://viacheslavchernyshov.github.io/java-interview-questions-and-answers/)
 - Russian landing page: [GitHub Pages / Russian](https://viacheslavchernyshov.github.io/java-interview-questions-and-answers/ru/)
 - Ukrainian landing page: [GitHub Pages / Ukrainian](https://viacheslavchernyshov.github.io/java-interview-questions-and-answers/uk/)
+- English answer library: [Read answers on the site](https://viacheslavchernyshov.github.io/java-interview-questions-and-answers/questions/)
+- Russian answer library: [Читать ответы на сайте](https://viacheslavchernyshov.github.io/java-interview-questions-and-answers/ru/questions/)
+- Ukrainian answer library: [Читати відповіді на сайті](https://viacheslavchernyshov.github.io/java-interview-questions-and-answers/uk/questions/)
 - English repository version: [eng/README.md](eng/README.md)
 - Russian repository version: [ru/README.md](ru/README.md)
 - Ukrainian repository version: [ua/README.md](ua/README.md)
@@ -47,7 +50,7 @@ This repository is built as a **practical Java backend interview preparation sys
 ## How to Use This Repository
 
 - Pick one topic cluster that matches the role you are targeting, for example Spring Boot, SQL, Kafka, or Concurrency
-- Start from the section navigator and move in order, because many questions build on previous ones
+- Start from the answer library on the site or from the section navigator in GitHub, then move in order because many questions build on previous ones
 - Use the three-layer answer structure to calibrate how deep your own answer should sound in interviews
 - Switch between English, Russian, and Ukrainian versions depending on study comfort or publishing needs
 

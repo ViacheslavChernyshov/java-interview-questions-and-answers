@@ -11,7 +11,7 @@ image: /assets/social-preview/github-social-preview.png
   <h1>Microservices interview questions and answers.</h1>
   <p class="lede">Microservices questions appear in backend interviews when the role goes beyond writing endpoints and into system design, service boundaries, reliability, and operational trade-offs. This page pulls together the microservice themes that come up most often in real backend hiring loops.</p>
   <div class="hero-actions">
-    <a class="button button-primary" href="{{ site.github.repository_url }}/blob/master/README.md#17-microservices">Browse microservices section on GitHub</a>
+    <a class="button button-primary" href="{{ '/questions/17-microservices/' | relative_url }}">Browse microservices answers</a>
     <a class="button" href="{{ '/' | relative_url }}">Back to home</a>
   </div>
 </section>

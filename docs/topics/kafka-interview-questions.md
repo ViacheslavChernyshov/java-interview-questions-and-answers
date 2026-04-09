@@ -11,7 +11,7 @@ image: /assets/social-preview/github-social-preview.png
   <h1>Kafka interview questions and answers.</h1>
   <p class="lede">Kafka comes up in backend interviews whenever the role touches event-driven architecture, asynchronous processing, or high-throughput integration between services. This page highlights the Kafka concepts that interviewers most often use to test practical systems thinking.</p>
   <div class="hero-actions">
-    <a class="button button-primary" href="{{ site.github.repository_url }}/blob/master/README.md#15-kafka">Browse Kafka section on GitHub</a>
+    <a class="button button-primary" href="{{ '/questions/15-kafka/' | relative_url }}">Browse Kafka answers</a>
     <a class="button" href="{{ '/' | relative_url }}">Back to home</a>
   </div>
 </section>

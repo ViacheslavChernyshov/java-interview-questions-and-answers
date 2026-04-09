@@ -11,7 +11,7 @@ image: /assets/social-preview/github-social-preview.png
   <h1>REST and HTTP interview questions and answers.</h1>
   <p class="lede">REST and HTTP questions are common in Java backend interviews because nearly every service exposes APIs. This page groups the API design and protocol fundamentals that help candidates explain not just how to build endpoints, but how to make them predictable, robust, and production-friendly.</p>
   <div class="hero-actions">
-    <a class="button button-primary" href="{{ site.github.repository_url }}/blob/master/README.md#6-rest--http">Browse REST and HTTP section on GitHub</a>
+    <a class="button button-primary" href="{{ '/questions/06-rest-http/' | relative_url }}">Browse REST and HTTP answers</a>
     <a class="button" href="{{ '/' | relative_url }}">Back to home</a>
   </div>
 </section>

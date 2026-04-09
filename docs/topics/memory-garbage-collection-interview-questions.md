@@ -11,7 +11,7 @@ image: /assets/social-preview/github-social-preview.png
   <h1>Memory and garbage collection interview questions and answers.</h1>
   <p class="lede">Memory and garbage collection questions are a classic part of Java interviews because they reveal whether a candidate understands what the JVM is doing underneath everyday code. This page collects the memory topics that are most useful in backend interviews and production troubleshooting conversations.</p>
   <div class="hero-actions">
-    <a class="button button-primary" href="{{ site.github.repository_url }}/blob/master/README.md#3-memory--garbage-collection">Browse memory and garbage collection section on GitHub</a>
+    <a class="button button-primary" href="{{ '/questions/03-memory-and-garbage-collection/' | relative_url }}">Browse memory and garbage collection answers</a>
     <a class="button" href="{{ '/' | relative_url }}">Back to home</a>
   </div>
 </section>

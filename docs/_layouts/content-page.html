@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+    {% if page.alternates %}
+      {% for alt in page.alternates %}
+    <link rel="alternate" hreflang="{{ alt.lang }}" href="{{ alt.url | absolute_url }}">
+      {% endfor %}
+    {% endif %}
+    {% seo %}
+  </head>
+  <body>
+    {% assign answers_url = '/questions/' %}
+    {% assign home_url = '/' %}
+    {% assign home_label = 'Home' %}
+    {% assign answers_label = 'All Answers' %}
+    {% assign library_badge = 'Answer Library' %}
+    {% assign section_label = 'Section' %}
+    {% assign question_label = 'Question' %}
+    {% assign source_label = 'Source Markdown' %}
+    {% assign versions_label = 'Language versions:' %}
+    {% assign previous_label = 'Previous' %}
+    {% assign next_label = 'Next' %}
+    {% assign questions_count_label = 'questions' %}
+    {% if page.lang == 'ru' %}
+      {% assign answers_url = '/ru/questions/' %}
+      {% assign home_url = '/ru/' %}
+      {% assign home_label = 'Главная' %}
+      {% assign answers_label = 'Все ответы' %}
+      {% assign library_badge = 'Библиотека ответов' %}
+      {% assign section_label = 'Раздел' %}
+      {% assign question_label = 'Вопрос' %}
+      {% assign source_label = 'Исходный Markdown' %}
+      {% assign versions_label = 'Версии по языкам:' %}
+      {% assign previous_label = 'Назад' %}
+      {% assign next_label = 'Далее' %}
+      {% assign questions_count_label = 'вопросов' %}
+    {% elsif page.lang == 'uk' %}
+      {% assign answers_url = '/uk/questions/' %}
+      {% assign home_url = '/uk/' %}
+      {% assign home_label = 'Головна' %}
+      {% assign answers_label = 'Усі відповіді' %}
+      {% assign library_badge = 'Бібліотека відповідей' %}
+      {% assign section_label = 'Розділ' %}
+      {% assign question_label = 'Питання' %}
+      {% assign source_label = 'Вихідний Markdown' %}
+      {% assign versions_label = 'Мовні версії:' %}
+      {% assign previous_label = 'Назад' %}
+      {% assign next_label = 'Далі' %}
+      {% assign questions_count_label = 'питань' %}
+    {% endif %}
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="{{ home_url | relative_url }}">Java Interview Questions</a>
+        <nav class="site-nav">
+          <a href="{{ home_url | relative_url }}">{{ home_label }}</a>
+          <a href="{{ answers_url | relative_url }}">{{ answers_label }}</a>
+          <a href="{{ '/' | relative_url }}">English</a>
+          <a href="{{ '/ru/' | relative_url }}">Russian</a>
+          <a href="{{ '/uk/' | relative_url }}">Ukrainian</a>
+          <a href="{{ site.github.repository_url }}">GitHub</a>
+        </nav>
+      </header>
+
+      <main>
+        <article class="content-page">
+          <p class="breadcrumbs">
+            <a href="{{ home_url | relative_url }}">{{ home_label }}</a>
+            {% if page.kind != 'library' %}
+              <span>/</span>
+              <a href="{{ answers_url | relative_url }}">{{ answers_label }}</a>
+            {% endif %}
+            {% if page.kind == 'question' %}
+              <span>/</span>
+              <a href="{{ page.section_url | relative_url }}">{{ page.section_title }}</a>
+            {% endif %}
+          </p>
+
+          <header class="content-hero">
+            {% if page.kind == 'library' %}
+              <span class="eyebrow">{{ library_badge }}</span>
+            {% elsif page.kind == 'section' %}
+              <span class="eyebrow">{{ section_label }} {{ page.section_number }} · {{ page.question_count }} {{ questions_count_label }}</span>
+            {% else %}
+              <span class="eyebrow">{{ question_label }} {{ page.question_number }} · {{ section_label }} {{ page.section_number }}</span>
+            {% endif %}
+            <h1>{{ page.title }}</h1>
+            {% if page.description %}
+              <p class="lede">{{ page.description }}</p>
+            {% endif %}
+
+            <div class="meta-row">
+              {% if page.language_label %}
+                <span class="meta-pill">{{ page.language_label }}</span>
+              {% endif %}
+              {% if page.kind == 'question' and page.section_title %}
+                <a class="meta-pill meta-pill-link" href="{{ page.section_url | relative_url }}">{{ page.section_title }}</a>
+              {% endif %}
+              {% if page.kind == 'section' and page.section_url %}
+                <span class="meta-pill">{{ page.section_title }}</span>
+              {% endif %}
+              {% if page.source_url %}
+                <a class="meta-pill meta-pill-link" href="{{ page.source_url }}">{{ source_label }}</a>
+              {% endif %}
+            </div>
+
+            {% if page.alternates %}
+              <div class="language-switcher">
+                <span class="switcher-label">{{ versions_label }}</span>
+                {% for alt in page.alternates %}
+                  {% unless alt.lang == 'x-default' %}
+                    {% assign lang_name = alt.lang %}
+                    {% if alt.lang == 'en' %}
+                      {% assign lang_name = 'English' %}
+                    {% elsif alt.lang == 'ru' %}
+                      {% assign lang_name = 'Russian' %}
+                    {% elsif alt.lang == 'uk' %}
+                      {% assign lang_name = 'Ukrainian' %}
+                    {% endif %}
+                    <a class="meta-pill meta-pill-link" href="{{ alt.url | relative_url }}">{{ lang_name }}</a>
+                  {% endunless %}
+                {% endfor %}
+              </div>
+            {% endif %}
+          </header>
+
+          <div class="markdown-body">
+            {{ content }}
+          </div>
+
+          {% if page.kind == 'question' and page.prev_url or page.next_url %}
+            <nav class="pager">
+              {% if page.prev_url %}
+                <a class="pager-link" href="{{ page.prev_url | relative_url }}">
+                  <span class="pager-label">{{ previous_label }}</span>
+                  <strong>{{ page.prev_title }}</strong>
+                </a>
+              {% endif %}
+              {% if page.next_url %}
+                <a class="pager-link" href="{{ page.next_url | relative_url }}">
+                  <span class="pager-label">{{ next_label }}</span>
+                  <strong>{{ page.next_title }}</strong>
+                </a>
+              {% endif %}
+            </nav>
+          {% endif %}
+        </article>
+      </main>
+
+      <footer class="site-footer">
+        <p>Built from the <a href="{{ site.github.repository_url }}">GitHub repository</a>. These answer pages are generated from the original Markdown source so the site and repository stay aligned.</p>
+      </footer>
+    </div>
+  </body>
+</html>

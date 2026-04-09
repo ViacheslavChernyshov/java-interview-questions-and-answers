@@ -11,7 +11,7 @@ image: /assets/social-preview/github-social-preview.png
   <h1>Hibernate and JPA interview questions and answers.</h1>
   <p class="lede">Hibernate and JPA questions appear in many Java backend interviews because they reveal whether a candidate understands what really happens between Java objects, SQL, transactions, and persistence context behavior. This page pulls together the ORM topics that usually matter most.</p>
   <div class="hero-actions">
-    <a class="button button-primary" href="{{ site.github.repository_url }}/blob/master/README.md#16-hibernate--jpa">Browse Hibernate and JPA section on GitHub</a>
+    <a class="button button-primary" href="{{ '/questions/16-hibernate-jpa/' | relative_url }}">Browse Hibernate and JPA answers</a>
     <a class="button" href="{{ '/' | relative_url }}">Back to home</a>
   </div>
 </section>

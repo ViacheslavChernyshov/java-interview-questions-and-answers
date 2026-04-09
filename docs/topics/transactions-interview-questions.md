@@ -11,7 +11,7 @@ image: /assets/social-preview/github-social-preview.png
   <h1>Transaction interview questions and answers.</h1>
   <p class="lede">Transaction questions show up in Java backend interviews whenever data consistency, concurrency, and service boundaries matter. This page groups the transaction concepts that usually separate surface-level Spring knowledge from real production understanding.</p>
   <div class="hero-actions">
-    <a class="button button-primary" href="{{ site.github.repository_url }}/blob/master/README.md#11-transactions">Browse transactions section on GitHub</a>
+    <a class="button button-primary" href="{{ '/questions/11-transactions/' | relative_url }}">Browse transaction answers</a>
     <a class="button" href="{{ '/' | relative_url }}">Back to home</a>
   </div>
 </section>
