@@ -87,7 +87,7 @@ Every answer follows the same format:
 27. Can you manually trigger GC
 28. Why you should not call System.gc()
 
-### 4. Collections (31 questions)
+### 4. Collections (30 questions)
 1. What are the main Collection Framework interfaces
 2. Difference between List, Set and Queue
 3. Difference between ArrayList and LinkedList
@@ -151,7 +151,7 @@ Every answer follows the same format:
 28. What is @Qualifier
 29. What are profiles in Spring
 
-### 6. REST HTTP (30 questions)
+### 6. REST HTTP (17 questions)
 1. What is REST
 2. What does Stateless mean in REST context
 3. What are the main HTTP methods used in REST
@@ -170,7 +170,7 @@ Every answer follows the same format:
 16. What is Content-Type header
 17. What is Accept header
 
-### 7. Exceptions (28 questions)
+### 7. Exceptions (29 questions)
 1. Difference between checked and unchecked exceptions
 2. What is a checked exception and when to use it
 3. What is an unchecked exception (Runtime Exception)
@@ -231,7 +231,7 @@ Every answer follows the same format:
 28. What to do with key collisions when collecting into Map
 29. How to work with Optional in Stream
 
-### 9. Multithreading (28 questions)
+### 9. Multithreading (27 questions)
 1. Difference between synchronized and volatile
 2. What is happens-before relationship
 3. What is the visibility problem
@@ -514,7 +514,7 @@ Every answer follows the same format:
 21. How to determine if a class has a single responsibility
 22. What anti-patterns contradict SOLID principles
 
-### 19. CompletableFuture and Asynchronicity (27 questions)
+### 19. CompletableFuture and Asynchronicity (28 questions)
 1. What is CompletableFuture and how does it differ from Future
 2. What are the main advantages of CompletableFuture over Future
 3. How to create a CompletableFuture that is already completed with a result
