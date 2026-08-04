@@ -16,3 +16,7 @@ eng/**/_batch_translate.py
 docs/questions/
 docs/ru/questions/
 docs/uk/questions/
+
+scripts/audit_all_files.ps1
+scripts/fix_level_markers.ps1
+PROJECT_STRUCTURE.md
