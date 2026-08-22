@@ -679,12 +679,11 @@ This repository is built as a **practical Java backend interview preparation sys
 
 ```
 README.md
-eng/    -> English markdown source
-ru/     -> Russian markdown source
-ua/     -> Ukrainian markdown source
-docs/   -> GitHub Pages SEO site
-assets/ -> social preview and supporting assets
-scripts/ -> local helper scripts
+eng/     -> English markdown source
+ru/      -> Russian markdown source
+ua/      -> Ukrainian markdown source
+docs/    -> GitHub Pages SEO site
+scripts/ -> site generation and helper scripts
 ```
 
 ---
