@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0f172a">
+    <meta name="theme-color" content="#090d16">
+    <meta name="baseurl" content="{{ site.baseurl }}">
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
     {% if page.alternates %}
       {% for alt in page.alternates %}
@@ -16,34 +17,36 @@
     {% assign answers_url = '/questions/' %}
     {% assign home_url = '/' %}
     {% assign home_label = 'Home' %}
-    {% assign answers_label = 'All Answers' %}
-    {% assign library_badge = 'Answer Library' %}
+    {% assign answers_label = 'Library' %}
     {% assign section_label = 'Section' %}
     {% assign question_label = 'Question' %}
     {% assign source_label = 'Source Markdown' %}
-    {% assign versions_label = 'Language versions:' %}
+    {% assign versions_label = 'Languages:' %}
     {% assign previous_label = 'Previous' %}
     {% assign next_label = 'Next' %}
     {% assign questions_count_label = 'questions' %}
+    {% assign search_placeholder = 'Search 500+ questions... (Ctrl+K)' %}
+    {% assign sidebar_title = 'Table of Contents' %}
+
     {% if page.lang == 'ru' %}
       {% assign answers_url = '/ru/questions/' %}
       {% assign home_url = '/ru/' %}
       {% assign home_label = 'Главная' %}
-      {% assign answers_label = 'Все ответы' %}
-      {% assign library_badge = 'Библиотека ответов' %}
+      {% assign answers_label = 'Библиотека' %}
       {% assign section_label = 'Раздел' %}
       {% assign question_label = 'Вопрос' %}
       {% assign source_label = 'Исходный Markdown' %}
-      {% assign versions_label = 'Версии по языкам:' %}
+      {% assign versions_label = 'Языковые версии:' %}
       {% assign previous_label = 'Назад' %}
       {% assign next_label = 'Далее' %}
       {% assign questions_count_label = 'вопросов' %}
+      {% assign search_placeholder = 'Поиск по 500+ вопросам... (Ctrl+K)' %}
+      {% assign sidebar_title = 'Содержание разделов' %}
     {% elsif page.lang == 'uk' %}
       {% assign answers_url = '/uk/questions/' %}
       {% assign home_url = '/uk/' %}
       {% assign home_label = 'Головна' %}
-      {% assign answers_label = 'Усі відповіді' %}
-      {% assign library_badge = 'Бібліотека відповідей' %}
+      {% assign answers_label = 'Бібліотека' %}
       {% assign section_label = 'Розділ' %}
       {% assign question_label = 'Питання' %}
       {% assign source_label = 'Вихідний Markdown' %}
@@ -51,108 +54,202 @@
       {% assign previous_label = 'Назад' %}
       {% assign next_label = 'Далі' %}
       {% assign questions_count_label = 'питань' %}
+      {% assign search_placeholder = 'Пошук по 500+ питанням... (Ctrl+K)' %}
+      {% assign sidebar_title = 'Зміст розділів' %}
     {% endif %}
-    <div class="site-shell">
-      <header class="site-header">
-        <a class="brand" href="{{ home_url | relative_url }}">Java Interview Questions</a>
-        <nav class="site-nav">
+
+    <header class="site-header">
+      <div class="header-container">
+        <div class="brand-wrapper">
+          <button type="button" class="mobile-toggle" id="mobile-menu-toggle" aria-label="Open sidebar menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <a class="brand-logo" href="{{ home_url | relative_url }}">
+            <span class="brand-icon">☕</span>
+            <span>Java Interview</span>
+            <span class="brand-version">v2</span>
+          </a>
+        </div>
+
+        <div class="header-actions">
+          <button type="button" class="search-trigger-btn" id="search-trigger-btn" aria-label="Open search">
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <span>{{ answers_label }}</span>
+            <span class="search-kbd">Ctrl K</span>
+          </button>
+
+          <nav class="lang-selector" aria-label="Language selector">
+            <a class="lang-pill {% if page.lang == 'en' %}active{% endif %}" href="{{ '/' | relative_url }}">🇬🇧 EN</a>
+            <a class="lang-pill {% if page.lang == 'ru' %}active{% endif %}" href="{{ '/ru/' | relative_url }}">🇷🇺 RU</a>
+            <a class="lang-pill {% if page.lang == 'uk' %}active{% endif %}" href="{{ '/uk/' | relative_url }}">🇺🇦 UK</a>
+          </nav>
+
+          <button type="button" class="icon-btn" id="theme-toggle-btn" aria-label="Toggle theme">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </button>
+
+          <a class="icon-btn" href="{{ site.github.repository_url | default: 'https://github.com/ViacheslavChernyshov/java-interview-questions-and-answers' }}" target="_blank" rel="noopener" aria-label="GitHub Repository">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-wrapper docs-layout">
+      <!-- Left Sidebar Navigation -->
+      <aside class="site-sidebar" id="site-sidebar">
+        <div class="sidebar-title">
+          <span>{{ sidebar_title }}</span>
+          <span class="sidebar-sec-badge">20 topics</span>
+        </div>
+
+        {% if page.sidebar_sections %}
+          {% for sec in page.sidebar_sections %}
+            <div class="sidebar-section-item {% if sec.is_current %}active expanded{% endif %}">
+              <a class="sidebar-section-header {% if sec.is_current and page.kind == 'section' %}active{% endif %}" href="{{ sec.url | relative_url }}">
+                <span class="sidebar-sec-info">
+                  <span>{{ sec.icon }}</span>
+                  <span>{{ sec.number }}. {{ sec.label }}</span>
+                </span>
+                <span class="sidebar-sec-badge">{{ sec.count }}</span>
+              </a>
+              {% if sec.questions %}
+                <ul class="sidebar-questions-list">
+                  {% for q in sec.questions %}
+                    <li>
+                      <a class="sidebar-q-link {% if q.is_current %}active{% endif %}" href="{{ q.url | relative_url }}">
+                        {{ q.position }}. {{ q.title }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          {% endfor %}
+        {% endif %}
+      </aside>
+
+      <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+      <!-- Main Article Content -->
+      <main class="content-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumbs">
           <a href="{{ home_url | relative_url }}">{{ home_label }}</a>
-          <a href="{{ answers_url | relative_url }}">{{ answers_label }}</a>
-          <a href="{{ '/' | relative_url }}">English</a>
-          <a href="{{ '/ru/' | relative_url }}">Russian</a>
-          <a href="{{ '/uk/' | relative_url }}">Ukrainian</a>
-          <a href="{{ site.github.repository_url }}">GitHub</a>
+          <span class="breadcrumbs-sep">/</span>
+          {% if page.kind != 'library' %}
+            <a href="{{ answers_url | relative_url }}">{{ answers_label }}</a>
+            <span class="breadcrumbs-sep">/</span>
+          {% endif %}
+          {% if page.kind == 'question' %}
+            <a href="{{ page.section_url | relative_url }}">{{ page.section_title }}</a>
+            <span class="breadcrumbs-sep">/</span>
+            <span>#{{ page.question_number }}</span>
+          {% elsif page.kind == 'section' %}
+            <span>{{ page.section_title }}</span>
+          {% else %}
+            <span>{{ page.title }}</span>
+          {% endif %}
         </nav>
-      </header>
 
-      <main>
-        <article class="content-page">
-          <p class="breadcrumbs">
-            <a href="{{ home_url | relative_url }}">{{ home_label }}</a>
-            {% if page.kind != 'library' %}
-              <span>/</span>
-              <a href="{{ answers_url | relative_url }}">{{ answers_label }}</a>
-            {% endif %}
-            {% if page.kind == 'question' %}
-              <span>/</span>
-              <a href="{{ page.section_url | relative_url }}">{{ page.section_title }}</a>
-            {% endif %}
-          </p>
-
-          <header class="content-hero">
+        <header class="article-header">
+          <div class="article-eyebrow">
             {% if page.kind == 'library' %}
-              <span class="eyebrow">{{ library_badge }}</span>
+              <span>📚 {{ answers_label }} · 20 topics</span>
             {% elsif page.kind == 'section' %}
-              <span class="eyebrow">{{ section_label }} {{ page.section_number }} · {{ page.question_count }} {{ questions_count_label }}</span>
+              <span>{{ page.icon }} {{ section_label }} {{ page.section_number }} · {{ page.question_count }} {{ questions_count_label }}</span>
             {% else %}
-              <span class="eyebrow">{{ question_label }} {{ page.question_number }} · {{ section_label }} {{ page.section_number }}</span>
+              <span>{{ page.icon }} {{ section_label }} {{ page.section_number }} · {{ question_label }} #{{ page.question_number }}</span>
             {% endif %}
-            <h1>{{ page.title }}</h1>
-            {% if page.description %}
-              <p class="lede">{{ page.description }}</p>
-            {% endif %}
+          </div>
 
-            <div class="meta-row">
+          <h1 class="article-title">{{ page.title }}</h1>
+
+          {% if page.description %}
+            <p class="article-lede">{{ page.description }}</p>
+          {% endif %}
+
+          <div class="article-meta-row">
+            <div class="meta-group">
               {% if page.language_label %}
-                <span class="meta-pill">{{ page.language_label }}</span>
+                <span class="meta-pill">{{ page.language_flag }} {{ page.language_label }}</span>
               {% endif %}
               {% if page.kind == 'question' and page.section_title %}
-                <a class="meta-pill meta-pill-link" href="{{ page.section_url | relative_url }}">{{ page.section_title }}</a>
-              {% endif %}
-              {% if page.kind == 'section' and page.section_url %}
-                <span class="meta-pill">{{ page.section_title }}</span>
+                <a class="meta-pill meta-pill-link" href="{{ page.section_url | relative_url }}">{{ page.icon }} {{ page.section_title }}</a>
               {% endif %}
               {% if page.source_url %}
-                <a class="meta-pill meta-pill-link" href="{{ page.source_url }}">{{ source_label }}</a>
+                <a class="meta-pill meta-pill-link" href="{{ page.source_url }}" target="_blank" rel="noopener">📄 {{ source_label }}</a>
               {% endif %}
             </div>
 
             {% if page.alternates %}
-              <div class="language-switcher">
-                <span class="switcher-label">{{ versions_label }}</span>
+              <div class="language-switch-bar">
+                <span>{{ versions_label }}</span>
                 {% for alt in page.alternates %}
                   {% unless alt.lang == 'x-default' %}
-                    {% assign lang_name = alt.lang %}
-                    {% if alt.lang == 'en' %}
-                      {% assign lang_name = 'English' %}
-                    {% elsif alt.lang == 'ru' %}
-                      {% assign lang_name = 'Russian' %}
-                    {% elsif alt.lang == 'uk' %}
-                      {% assign lang_name = 'Ukrainian' %}
-                    {% endif %}
-                    <a class="meta-pill meta-pill-link" href="{{ alt.url | relative_url }}">{{ lang_name }}</a>
+                    <a class="meta-pill meta-pill-link" href="{{ alt.url | relative_url }}">{{ alt.flag }} {{ alt.label }}</a>
                   {% endunless %}
                 {% endfor %}
               </div>
             {% endif %}
-          </header>
-
-          <div class="markdown-body">
-            {{ content }}
           </div>
 
-          {% if page.kind == 'question' and page.prev_url or page.next_url %}
-            <nav class="pager">
-              {% if page.prev_url %}
-                <a class="pager-link" href="{{ page.prev_url | relative_url }}">
-                  <span class="pager-label">{{ previous_label }}</span>
-                  <strong>{{ page.prev_title }}</strong>
-                </a>
-              {% endif %}
-              {% if page.next_url %}
-                <a class="pager-link" href="{{ page.next_url | relative_url }}">
-                  <span class="pager-label">{{ next_label }}</span>
-                  <strong>{{ page.next_title }}</strong>
-                </a>
-              {% endif %}
-            </nav>
-          {% endif %}
-        </article>
-      </main>
+          <!-- Level Quick Anchors Container (Filled dynamically by site.js) -->
+          <div class="level-anchors-container" id="level-anchors"></div>
+        </header>
 
-      <footer class="site-footer">
-        <p>Built from the <a href="{{ site.github.repository_url }}">GitHub repository</a>. These answer pages are generated from the original Markdown source so the site and repository stay aligned.</p>
-      </footer>
+        <div class="markdown-body">
+          {{ content }}
+        </div>
+
+        {% if page.kind == 'question' and page.prev_url or page.next_url %}
+          <nav class="pager-container" aria-label="Question pagination">
+            {% if page.prev_url %}
+              <a class="pager-card prev" href="{{ page.prev_url | relative_url }}">
+                <span class="pager-direction">← {{ previous_label }}</span>
+                <span class="pager-title">{{ page.prev_title }}</span>
+              </a>
+            {% endif %}
+            {% if page.next_url %}
+              <a class="pager-card next" href="{{ page.next_url | relative_url }}">
+                <span class="pager-direction">{{ next_label }} →</span>
+                <span class="pager-title">{{ page.next_title }}</span>
+              </a>
+            {% endif %}
+          </nav>
+        {% endif %}
+      </main>
     </div>
+
+    <!-- Search Modal -->
+    <div class="search-modal-backdrop" id="search-modal" role="dialog" aria-modal="true" aria-label="Search questions">
+      <div class="search-modal-window">
+        <div class="search-input-header">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" class="search-modal-input" id="search-input" placeholder="{{ search_placeholder }}" autocomplete="off" spellcheck="false">
+          <button type="button" class="icon-btn" id="search-close-btn" aria-label="Close search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+        <div class="search-modal-results" id="search-results">
+          <div class="search-empty-state">Type a keyword, topic, or question...</div>
+        </div>
+        <div class="search-modal-footer">
+          <span>Navigate with <kbd>↑</kbd> <kbd>↓</kbd> · Open with <kbd>Enter</kbd></span>
+          <span>Close with <kbd>Esc</kbd></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button type="button" class="back-to-top-btn" id="back-to-top" aria-label="Scroll back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+    </button>
+
+    <footer class="site-footer">
+      <p>☕ <strong>Java Interview Questions and Answers</strong> · Open Source Knowledge Portal</p>
+      <p>Built from the <a href="{{ site.github.repository_url | default: 'https://github.com/ViacheslavChernyshov/java-interview-questions-and-answers' }}" target="_blank" rel="noopener">GitHub repository</a>. Fully synced across English, Russian, and Ukrainian.</p>
+    </footer>
+
+    <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
   </body>
 </html>

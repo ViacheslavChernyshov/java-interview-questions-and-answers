@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Java Interview Questions and Answers
-description: 500+ Java interview questions and answers for Junior, Middle, and Senior developers. Covers Spring Boot, Hibernate, SQL, Kafka, Docker, Kubernetes, Collections, Concurrency, and more.
+title: Java Interview Questions and Answers - Complete 500+ Prep Portal
+description: 500+ Java interview questions and answers for Junior, Middle, and Senior developers. Master Spring Boot, Hibernate, SQL, Kafka, Concurrency, Docker, and System Architecture.
 lang: en
 image: /assets/social-preview/github-social-preview.png
 alternates:
@@ -15,175 +15,281 @@ alternates:
     url: /
 ---
 
-<section class="hero">
-  <span class="eyebrow">Java Backend Interview Preparation</span>
-  <h1>Java interview questions built for real preparation.</h1>
-  <p class="lede">This project organizes 500+ Java interview questions and answers into topic-based learning paths for Junior, Middle, and Senior developers. It is designed for focused review, deep concept refreshers, and fast navigation across core backend subjects.</p>
+<section class="hero-section">
+  <div class="hero-badge">
+    <span>☕ Java Interview Mastery Portal</span>
+  </div>
+  <h1 class="hero-title">500+ Java Interview Questions & Answers</h1>
+  <p class="hero-subtitle">Comprehensive preparation guide covering 20 key backend domains with structured explanations for Junior, Middle, and Senior engineers.</p>
 
-  <div class="badge-row">
-    <span class="level-badge level-junior">Junior</span>
-    <span class="level-badge level-middle">Middle</span>
-    <span class="level-badge level-senior">Senior</span>
+  <div class="hero-search-box">
+    <input type="text" class="hero-search-input" id="hero-search-input" placeholder="Search 500+ interview questions, topics, or concepts... (Ctrl+K)" readonly>
+    <svg class="hero-search-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
   </div>
 
-  <div class="chip-row">
-    <span class="chip">Spring Boot</span>
-    <span class="chip">Hibernate / JPA</span>
-    <span class="chip">SQL / PostgreSQL</span>
-    <span class="chip">Kafka</span>
-    <span class="chip">Docker / Kubernetes</span>
-    <span class="chip">Concurrency</span>
-    <span class="chip">Collections</span>
-    <span class="chip">REST / HTTP</span>
-  </div>
-
-  <div class="hero-actions">
-    <a class="button button-primary" href="{{ '/questions/' | relative_url }}">Browse Answer Library</a>
-    <a class="button" href="{{ site.github.repository_url }}">Open GitHub Repository</a>
-    <a class="button" href="{{ '/ru/' | relative_url }}">Open Russian Version</a>
-    <a class="button" href="{{ '/uk/' | relative_url }}">Open Ukrainian Version</a>
-  </div>
-
-  <div class="stats">
-    <div class="stat">
-      <strong>500+</strong>
-      <span>Interview questions and answers</span>
+  <div class="stats-grid">
+    <div class="stat-box">
+      <span class="stat-value">507</span>
+      <span class="stat-label">Interview Questions</span>
     </div>
-    <div class="stat">
-      <strong>20</strong>
-      <span>Major Java backend topics</span>
+    <div class="stat-box">
+      <span class="stat-value">20</span>
+      <span class="stat-label">Topic Clusters</span>
     </div>
-    <div class="stat">
-      <strong>3</strong>
-      <span>Answer depth levels for every topic</span>
+    <div class="stat-box">
+      <span class="stat-value">3</span>
+      <span class="stat-label">Levels per Answer</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-value">100%</span>
+      <span class="stat-label">Open Source & Free</span>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <h2>What this site covers</h2>
-  <p>This Java interview resource spans both fundamentals and production-level backend knowledge. Instead of a random list of prompts, the material is grouped into topic clusters so readers can study by domain: memory, collections, concurrency, Spring Boot, transactions, SQL, Hibernate, Kafka, Docker, Kubernetes, and more. That structure makes it useful both for interview prep and for day-to-day engineering review.</p>
-  <p>Each answer is framed in three layers. Junior-level explanations keep concepts clear. Middle-level explanations add mechanics, practical trade-offs, and common mistakes. Senior-level explanations go deeper into internals, architecture, edge cases, and production thinking.</p>
-</section>
+<div class="section-heading-wrap">
+  <h2 class="section-main-title">Explore 20 Topic Clusters</h2>
+  <p class="section-main-subtitle">Choose a domain to start reviewing structured answers with under-the-hood breakdowns and interview cheat sheets.</p>
+</div>
 
-<section class="section">
-  <h2>Topic clusters</h2>
-  <div class="card-grid">
-    <article class="card">
-      <h3 class="card-title">Core Java internals</h3>
-      <p>Collections, HashMap, String, immutability, exceptions, Stream API, memory model, and garbage collection.</p>
-      <p><a href="{{ '/topics/java-collections-interview-questions/' | relative_url }}">Explore core Java topics</a></p>
-    </article>
-    <article class="card">
-      <h3 class="card-title">Spring and transactions</h3>
-      <p>Dependency injection, Spring Boot internals, proxies, transactional behavior, and propagation strategies.</p>
-      <p><a href="{{ '/topics/spring-boot-interview-questions/' | relative_url }}">Explore Spring and transaction topics</a></p>
-    </article>
-    <article class="card">
-      <h3 class="card-title">Persistence and data</h3>
-      <p>SQL, PostgreSQL, indexes, MVCC, query optimization, Hibernate, JPA, lazy loading, locking, and caches.</p>
-      <p><a href="{{ '/topics/hibernate-jpa-interview-questions/' | relative_url }}">Explore persistence and ORM topics</a></p>
-    </article>
-    <article class="card">
-      <h3 class="card-title">API and integration design</h3>
-      <p>REST, HTTP methods, idempotency, status codes, pagination, caching, contracts, and service integration.</p>
-      <p><a href="{{ '/topics/rest-http-interview-questions/' | relative_url }}">Explore API design topics</a></p>
-    </article>
-    <article class="card">
-      <h3 class="card-title">Distributed backend systems</h3>
-      <p>Kafka, microservices, fault tolerance, observability, and asynchronous processing patterns.</p>
-      <p><a href="{{ '/topics/kafka-interview-questions/' | relative_url }}">Explore distributed systems topics</a></p>
-    </article>
-    <article class="card">
-      <h3 class="card-title">Containers and platform basics</h3>
-      <p>Docker images, Kubernetes Deployments, probes, configuration, scaling, and runtime operations.</p>
-      <p><a href="{{ '/topics/docker-kubernetes-interview-questions/' | relative_url }}">Explore container and platform topics</a></p>
-    </article>
-  </div>
-</section>
+<div class="topics-grid">
+  <a class="topic-card" href="{{ '/questions/01-databases-sql-postgresql/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">🗄️</span>
+      <span class="topic-count">21 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">1. Databases SQL PostgreSQL</h3>
+      <p class="topic-desc">Indexes, B-Trees, MVCC, VACUUM, JOINs, window functions, and query optimization.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
 
-<section class="section">
-  <h2>How to use this repository effectively</h2>
-  <ol class="topic-list">
-    <li>Pick one cluster that matches the role you target, for example Spring Boot, concurrency, or SQL.</li>
-    <li>Open the site answer library and read the question list in order, because related questions build on each other.</li>
-    <li>Use the three-level structure to calibrate your answer depth for different interview stages.</li>
-    <li>Use the GitHub repository when you want the raw markdown source or file-level navigation.</li>
-  </ol>
-</section>
+  <a class="topic-card" href="{{ '/questions/02-design-patterns/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">🧩</span>
+      <span class="topic-count">16 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">2. Design Patterns</h3>
+      <p class="topic-desc">GoF patterns in Java: Singleton, Factory, Strategy, Observer, Decorator, and Proxies.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
 
-<section class="section">
-  <h2>Featured topic pages</h2>
-  <p>Each topic page highlights representative interview questions, explains what interviewers usually test in that area, and links back to the full markdown section in the repository.</p>
-  <div class="card-grid">
-    <article class="card">
-      <h3 class="card-title"><a href="{{ '/topics/spring-boot-interview-questions/' | relative_url }}">Spring Boot interview questions</a></h3>
-      <p>A focused landing page around dependency injection, bean lifecycle, proxies, transaction boundaries, and production-oriented Spring interview topics.</p>
-    </article>
-    <article class="card">
-      <h3 class="card-title"><a href="{{ '/topics/java-concurrency-interview-questions/' | relative_url }}">Java concurrency interview questions</a></h3>
-      <p>Threads, synchronized, volatile, CAS, atomics, thread pools, locks, race conditions, and Java 21 virtual threads.</p>
-    </article>
-    <article class="card">
-      <h3 class="card-title"><a href="{{ '/topics/java-collections-interview-questions/' | relative_url }}">Java collections interview questions</a></h3>
-      <p>ArrayList, LinkedList, Set, Map, iteration, complexity, fail-fast behavior, and practical collection trade-offs.</p>
-    </article>
-    <article class="card">
-      <h3 class="card-title"><a href="{{ '/topics/sql-postgresql-interview-questions/' | relative_url }}">SQL and PostgreSQL interview questions</a></h3>
-      <p>Indexes, JOINs, correlated subqueries, window functions, MVCC, VACUUM, ANALYZE, and query optimization.</p>
-    </article>
-    <article class="card">
-      <h3 class="card-title"><a href="{{ '/topics/hibernate-jpa-interview-questions/' | relative_url }}">Hibernate and JPA interview questions</a></h3>
-      <p>Entity lifecycle, persistence context, dirty checking, lazy loading, N+1 queries, flush behavior, and locking.</p>
-    </article>
-    <article class="card">
-      <h3 class="card-title"><a href="{{ '/topics/rest-http-interview-questions/' | relative_url }}">REST and HTTP interview questions</a></h3>
-      <p>HTTP methods, idempotency, status codes, pagination, error contracts, versioning, caching, and API design fundamentals.</p>
-    </article>
-    <article class="card">
-      <h3 class="card-title"><a href="{{ '/topics/kafka-interview-questions/' | relative_url }}">Kafka interview questions</a></h3>
-      <p>Topics, partitions, offsets, consumer groups, rebalancing, retention, delivery semantics, and idempotent consumers.</p>
-    </article>
-    <article class="card">
-      <h3 class="card-title"><a href="{{ '/topics/docker-kubernetes-interview-questions/' | relative_url }}">Docker and Kubernetes interview questions</a></h3>
-      <p>Images, containers, layers, volumes, deployments, probes, config management, rollout strategies, and scaling basics.</p>
-    </article>
-    <article class="card">
-      <h3 class="card-title"><a href="{{ '/topics/transactions-interview-questions/' | relative_url }}">Transaction interview questions</a></h3>
-      <p>ACID, isolation levels, rollback rules, propagation, locking, MVCC, and transactional boundaries in backend services.</p>
-    </article>
-    <article class="card">
-      <h3 class="card-title"><a href="{{ '/topics/microservices-interview-questions/' | relative_url }}">Microservices interview questions</a></h3>
-      <p>Service boundaries, communication patterns, resilience, consistency, observability, and distributed trade-offs.</p>
-    </article>
-    <article class="card">
-      <h3 class="card-title"><a href="{{ '/topics/stream-api-interview-questions/' | relative_url }}">Stream API interview questions</a></h3>
-      <p><code>map</code>, <code>filter</code>, <code>reduce</code>, collectors, laziness, side effects, and performance trade-offs.</p>
-    </article>
-    <article class="card">
-      <h3 class="card-title"><a href="{{ '/topics/memory-garbage-collection-interview-questions/' | relative_url }}">Memory and garbage collection interview questions</a></h3>
-      <p>Heap, stack, generations, GC roots, memory leaks, pauses, references, and JVM runtime behavior.</p>
-    </article>
-  </div>
-</section>
+  <a class="topic-card" href="{{ '/questions/03-memory-and-garbage-collection/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">🧠</span>
+      <span class="topic-count">28 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">3. Memory & Garbage Collection</h3>
+      <p class="topic-desc">JVM Heap, Stack, Metaspace, G1, ZGC, memory leaks, OutOfMemoryError, and profiling.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
 
-<section class="section">
-  <h2>Language versions</h2>
-  <div class="card-grid">
-    <article class="card">
-      <h3 class="card-title">English</h3>
-      <p>The primary search-facing version for Java interview questions and answers.</p>
-      <p><a href="{{ site.github.repository_url }}/blob/master/eng/README.md">Open English repository version</a></p>
-    </article>
-    <article class="card">
-      <h3 class="card-title">Russian</h3>
-      <p>A complete alternate language version with the same overall interview coverage.</p>
-      <p><a href="{{ site.github.repository_url }}/blob/master/ru/README.md">Open Russian repository version</a></p>
-    </article>
-    <article class="card">
-      <h3 class="card-title">Ukrainian</h3>
-      <p>A complete Ukrainian version with the same 20-topic preparation structure and study flow.</p>
-      <p><a href="{{ site.github.repository_url }}/blob/master/ua/README.md">Open Ukrainian repository version</a></p>
-    </article>
-  </div>
-</section>
+  <a class="topic-card" href="{{ '/questions/04-collections/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">📦</span>
+      <span class="topic-count">30 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">4. Collections Framework</h3>
+      <p class="topic-desc">ArrayList, LinkedList, TreeSet, ConcurrentHashMap, fail-fast vs fail-safe iterators.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
+
+  <a class="topic-card" href="{{ '/questions/05-spring-spring-boot/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">🍃</span>
+      <span class="topic-count">29 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">5. Spring & Spring Boot</h3>
+      <p class="topic-desc">IoC, DI, Bean Lifecycle, BeanPostProcessor, auto-configuration, actuators, and proxies.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
+
+  <a class="topic-card" href="{{ '/questions/06-rest-http/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">🌐</span>
+      <span class="topic-count">17 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">6. REST & HTTP</h3>
+      <p class="topic-desc">HTTP methods, idempotency, status codes, REST maturity model, and API design principles.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
+
+  <a class="topic-card" href="{{ '/questions/07-exceptions/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">⚡</span>
+      <span class="topic-count">29 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">7. Exceptions Handling</h3>
+      <p class="topic-desc">Checked vs Unchecked, try-with-resources, AutoCloseable, suppressed exceptions, best practices.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
+
+  <a class="topic-card" href="{{ '/questions/08-stream-api/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">🌊</span>
+      <span class="topic-count">29 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">8. Stream API</h3>
+      <p class="topic-desc">Intermediate & terminal operations, collectors, parallel streams, reduce, Spliterator.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
+
+  <a class="topic-card" href="{{ '/questions/09-concurrency/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">🧵</span>
+      <span class="topic-count">27 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">9. Multithreading & Concurrency</h3>
+      <p class="topic-desc">JMM, synchronized, volatile, CAS, Atomic classes, ThreadPools, Virtual Threads, and Deadlocks.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
+
+  <a class="topic-card" href="{{ '/questions/10-hashmap-equals-hashcode/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">🔑</span>
+      <span class="topic-count">29 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">10. HashMap, equals & hashCode</h3>
+      <p class="topic-desc">Internal bucket hashing, treeification (Red-Black trees), collision handling, and contracts.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
+
+  <a class="topic-card" href="{{ '/questions/11-transactions/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">💳</span>
+      <span class="topic-count">22 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">11. Transactions</h3>
+      <p class="topic-desc">ACID properties, isolation levels, propagation types in Spring `@Transactional`, and 2PC.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
+
+  <a class="topic-card" href="{{ '/questions/12-string/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">🔤</span>
+      <span class="topic-count">23 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">12. String Internals</h3>
+      <p class="topic-desc">String Constant Pool, Compact Strings, StringBuilder vs StringBuffer, immutability benefits.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
+
+  <a class="topic-card" href="{{ '/questions/13-immutability/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">🔒</span>
+      <span class="topic-count">29 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">13. Immutability</h3>
+      <p class="topic-desc">Defensive copying, unmodifiable wrappers, Java Records, thread safety through immutability.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
+
+  <a class="topic-card" href="{{ '/questions/14-docker-kubernetes/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">🐳</span>
+      <span class="topic-count">24 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">14. Docker & Kubernetes</h3>
+      <p class="topic-desc">Containerization, multi-stage builds, Pods, Services, Deployments, ConfigMaps, and Probes.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
+
+  <a class="topic-card" href="{{ '/questions/15-kafka/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">📨</span>
+      <span class="topic-count">30 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">15. Apache Kafka</h3>
+      <p class="topic-desc">Topics, partitions, consumer groups, delivery semantics, offsets, idempotence, and rebalances.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
+
+  <a class="topic-card" href="{{ '/questions/16-hibernate-jpa/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">💾</span>
+      <span class="topic-count">30 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">16. Hibernate & JPA</h3>
+      <p class="topic-desc">Entity lifecycle, N+1 query problem, fetch strategies, L1/L2 caches, and optimistic locking.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
+
+  <a class="topic-card" href="{{ '/questions/17-microservices/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">🏗️</span>
+      <span class="topic-count">26 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">17. Microservices Architecture</h3>
+      <p class="topic-desc">Service Discovery, API Gateway, Circuit Breaker, Saga Pattern, Distributed Tracing, CQRS.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
+
+  <a class="topic-card" href="{{ '/questions/18-oop-and-solid/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">📐</span>
+      <span class="topic-count">22 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">18. OOP & SOLID Principles</h3>
+      <p class="topic-desc">Encapsulation, Polymorphism, Inheritance vs Composition, Single Responsibility, LSP, DIP.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
+
+  <a class="topic-card" href="{{ '/questions/19-completablefuture-and-asynchrony/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">⏱️</span>
+      <span class="topic-count">28 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">19. CompletableFuture & Async</h3>
+      <p class="topic-desc">Asynchronous composition, exception handling, allOf / anyOf, thread pool management.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
+
+  <a class="topic-card" href="{{ '/questions/20-records-and-generics/' | relative_url }}">
+    <div class="topic-card-top">
+      <span class="topic-icon">📋</span>
+      <span class="topic-count">27 Questions</span>
+    </div>
+    <div>
+      <h3 class="topic-title">20. Records & Generics</h3>
+      <p class="topic-desc">Java Records, Type Erasure, Wildcards `? extends / super`, PECS rule, Bridge methods.</p>
+    </div>
+    <div class="topic-footer">Start learning →</div>
+  </a>
+</div>

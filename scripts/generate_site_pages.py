@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import re
 import shutil
 from dataclasses import dataclass, field
@@ -11,6 +12,30 @@ from urllib.parse import quote
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DOCS_DIR = REPO_ROOT / "docs"
 REPOSITORY_URL = "https://github.com/ViacheslavChernyshov/java-interview-questions-and-answers"
+
+SECTION_ICONS = {
+    1: "🗄️",
+    2: "🧩",
+    3: "🧠",
+    4: "📦",
+    5: "🍃",
+    6: "🌐",
+    7: "⚡",
+    8: "🌊",
+    9: "🧵",
+    10: "🔑",
+    11: "💳",
+    12: "🔤",
+    13: "🔒",
+    14: "🐳",
+    15: "📨",
+    16: "💾",
+    17: "🏗️",
+    18: "📐",
+    19: "⏱️",
+    20: "📋",
+}
+
 LANGUAGES = {
     "eng": {
         "lang_code": "en",
@@ -18,29 +43,35 @@ LANGUAGES = {
         "output_dir": DOCS_DIR / "questions",
         "source_dir": REPO_ROOT / "eng",
         "label": "English",
+        "flag": "🇬🇧",
         "library_title": "Java Interview Questions and Answers Library",
         "library_description": "Browse 500+ Java interview answers directly on the site across Spring Boot, SQL, Hibernate, Kafka, Concurrency, and other backend topics.",
         "home_url": "/",
+        "search_file": "search-index-en.json",
     },
     "ru": {
         "lang_code": "ru",
         "site_prefix": "ru",
         "output_dir": DOCS_DIR / "ru" / "questions",
         "source_dir": REPO_ROOT / "ru",
-        "label": "Russian",
-        "library_title": "Java interview questions и ответы на сайте",
-        "library_description": "Полная библиотека ответов по Java interview: Spring Boot, SQL, Hibernate, Kafka, многопоточность, Docker, Kubernetes и другие backend-темы.",
+        "label": "Русский",
+        "flag": "🇷🇺",
+        "library_title": "Java Interview Questions и ответы на сайте",
+        "library_description": "Полная библиотека из 500+ ответов по Java interview: Spring Boot, SQL, Hibernate, Kafka, многопоточность, Docker, Kubernetes и архитектура.",
         "home_url": "/ru/",
+        "search_file": "search-index-ru.json",
     },
     "ua": {
         "lang_code": "uk",
         "site_prefix": "uk",
         "output_dir": DOCS_DIR / "uk" / "questions",
         "source_dir": REPO_ROOT / "ua",
-        "label": "Ukrainian",
-        "library_title": "Java interview questions і відповіді на сайті",
-        "library_description": "Повна бібліотека відповідей для Java interview: Spring Boot, SQL, Hibernate, Kafka, багатопоточність, Docker, Kubernetes та інші backend-теми.",
+        "label": "Українська",
+        "flag": "🇺🇦",
+        "library_title": "Java Interview Questions та відповіді на сайті",
+        "library_description": "Повна бібліотека відповідей для Java interview: Spring Boot, SQL, Hibernate, Kafka, багатопоточність, Docker, Kubernetes та архітектура.",
         "home_url": "/uk/",
+        "search_file": "search-index-uk.json",
     },
 }
 
@@ -61,12 +92,12 @@ LOCALIZED_TEXT = {
         "section_description": "{count} interview questions and answers in the {label} section.",
     },
     "ru": {
-        "library_intro": "Открывайте полную библиотеку ответов прямо на сайте на русском языке. Каждая секция и каждая страница вопроса генерируются из исходных Markdown-файлов репозитория, поэтому сайт и GitHub-версия остаются синхронизированными.",
+        "library_intro": "Открывайте полную библиотеку ответов прямо на сайте на русском языке. Каждая секция и каждая страница вопроса генерируются из исходных Markdown-файлов репозитория.",
         "library_use_heading": "Как пользоваться этой библиотекой",
         "library_steps": [
             "Выберите тематический блок под роль, на которую готовитесь.",
             "Откройте страницу секции, чтобы пройти все вопросы по порядку.",
-            "Читайте ответ прямо на сайте, затем переключайте язык или переходите к следующему вопросу.",
+            "Читайте ответ прямо на сайте, переключайте язык или переходите к следующему вопросу.",
         ],
         "library_sections_heading": "Все разделы",
         "table_topic": "Тема",
@@ -76,12 +107,12 @@ LOCALIZED_TEXT = {
         "section_description": "{count} вопросов и ответов в разделе {label}.",
     },
     "ua": {
-        "library_intro": "Відкривайте повну бібліотеку відповідей прямо на сайті українською. Кожна секція і кожна сторінка питання генеруються з вихідних Markdown-файлів репозиторію, тому сайт і GitHub-версія залишаються синхронізованими.",
+        "library_intro": "Відкривайте повну бібліотеку відповідей прямо на сайті українською. Кожна секція і кожна сторінка питання генеруються з вихідних Markdown-файлів репозиторію.",
         "library_use_heading": "Як користуватися цією бібліотекою",
         "library_steps": [
             "Оберіть тематичний блок під роль, до якої готуєтесь.",
             "Відкрийте сторінку секції, щоб пройти всі питання по порядку.",
-            "Читайте відповідь прямо на сайті, потім перемикайте мову або переходьте до наступного питання.",
+            "Читайте відповідь прямо на сайті, перемикайте мову або переходьте до наступного питання.",
         ],
         "library_sections_heading": "Усі розділи",
         "table_topic": "Тема",
@@ -124,13 +155,14 @@ class Section:
     navigator_path: Path
     navigator_body: str
     navigator_title: str
+    icon: str = "📚"
     slug: str = ""
     url: str = ""
     questions: list[Question] = field(default_factory=list)
 
 
 def yaml_quote(value: str) -> str:
-    escaped = value.replace("\\", "\\\\").replace('"', '\\"')
+    escaped = str(value).replace("\\", "\\\\").replace('"', '\\"')
     return f'"{escaped}"'
 
 
@@ -140,11 +172,26 @@ def render_front_matter(data: dict) -> str:
         if isinstance(value, list):
             lines.append(f"{key}:")
             for item in value:
-                lines.append("  -")
-                for nested_key, nested_value in item.items():
-                    lines.append(f"    {nested_key}: {yaml_quote(str(nested_value))}")
+                if isinstance(item, dict):
+                    lines.append("  -")
+                    for nested_key, nested_value in item.items():
+                        if isinstance(nested_value, list):
+                            lines.append(f"    {nested_key}:")
+                            for sub in nested_value:
+                                if isinstance(sub, dict):
+                                    lines.append("      -")
+                                    for sk, sv in sub.items():
+                                        lines.append(f"        {sk}: {yaml_quote(str(sv))}")
+                                else:
+                                    lines.append(f"      - {yaml_quote(str(sub))}")
+                        elif isinstance(nested_value, (int, bool)):
+                            lines.append(f"    {nested_key}: {nested_value}")
+                        else:
+                            lines.append(f"    {nested_key}: {yaml_quote(str(nested_value))}")
+                else:
+                    lines.append(f"  - {yaml_quote(str(item))}")
             continue
-        if isinstance(value, int):
+        if isinstance(value, (int, bool)):
             lines.append(f"{key}: {value}")
             continue
         lines.append(f"{key}: {yaml_quote(str(value))}")
@@ -215,14 +262,6 @@ def extract_summary(body: str) -> str:
     return summary[:177].rstrip() + "..."
 
 
-def relative_question_link(question_slug: str) -> str:
-    return f"./{question_slug}/"
-
-
-def relative_section_link(section_slug: str) -> str:
-    return f"./{section_slug}/"
-
-
 def site_url(lang_key: str, *parts: str) -> str:
     prefix = LANGUAGES[lang_key]["site_prefix"]
     clean_parts = [part.strip("/") for part in parts if part]
@@ -234,7 +273,7 @@ def site_url(lang_key: str, *parts: str) -> str:
 def rewrite_navigator_links(navigator_body: str, section: Section) -> str:
     rewritten = navigator_body
     for question in section.questions:
-        replacement = relative_question_link(question.slug)
+        replacement = f"./{question.slug}/"
         candidates = {
             question.file_name,
             quote(question.file_name),
@@ -296,6 +335,7 @@ def parse_language(lang_key: str) -> dict[int, Section]:
             navigator_path=navigator_path,
             navigator_body=navigator_body.strip(),
             navigator_title=navigator_title,
+            icon=SECTION_ICONS.get(number, "📚"),
             questions=questions,
         )
 
@@ -359,17 +399,34 @@ def build_alternates(all_sections: dict[str, dict[int, Section]], section_number
                 default_url = url
         if question_position is None and lang_key == "eng":
             default_url = url
-        alternates.append({"lang": lang_config["lang_code"], "url": url})
-    alternates.append({"lang": "x-default", "url": default_url})
+        alternates.append({"lang": lang_config["lang_code"], "label": lang_config["label"], "flag": lang_config["flag"], "url": url})
+    alternates.append({"lang": "x-default", "label": "Default", "flag": "🌐", "url": default_url})
     return alternates
 
 
-def build_library_alternates() -> list[dict[str, str]]:
-    alternates = []
-    for lang_key, lang_config in LANGUAGES.items():
-        alternates.append({"lang": lang_config["lang_code"], "url": site_url(lang_key, "questions")})
-    alternates.append({"lang": "x-default", "url": site_url("eng", "questions")})
-    return alternates
+def build_sidebar_data(sections: list[Section], current_section_number: int | None = None, current_question_position: int | None = None) -> list[dict]:
+    return [
+        {
+            "number": s.number,
+            "label": s.label,
+            "icon": s.icon,
+            "slug": s.slug,
+            "url": s.url,
+            "count": len(s.questions),
+            "is_current": s.number == current_section_number,
+            "questions": [
+                {
+                    "position": q.position,
+                    "title": q.title,
+                    "slug": q.slug,
+                    "url": q.url,
+                    "is_current": s.number == current_section_number and q.position == current_question_position,
+                }
+                for q in s.questions
+            ],
+        }
+        for s in sections
+    ]
 
 
 def build_library_content(lang_key: str, sections: Iterable[Section]) -> str:
@@ -389,11 +446,11 @@ def build_library_content(lang_key: str, sections: Iterable[Section]) -> str:
         "",
         f"## {text['library_sections_heading']}",
         "",
-        f"| # | {text['table_topic']} | {text['table_questions']} |",
-        "| --- | --- | --- |",
+        f"| # | | {text['table_topic']} | {text['table_questions']} |",
+        "| --- |:---:| --- |:---:|",
     ])
     for section in sections:
-        lines.append(f"| {section.number} | [{section.label}]({relative_section_link(section.slug)}) | {len(section.questions)} |")
+        lines.append(f"| {section.number} | {section.icon} | [{section.label}](./{section.slug}/) | {len(section.questions)} |")
     return "\n".join(lines) + "\n"
 
 
@@ -405,7 +462,7 @@ def build_section_content(lang_key: str, section: Section) -> str:
         "",
     ]
     for question in section.questions:
-        lines.append(f"{question.position}. [{question.title}]({relative_question_link(question.slug)})")
+        lines.append(f"{question.position}. [{question.title}](./{question.slug}/)")
     lines.extend([
         "",
         f"## {text['section_navigator_heading']}",
@@ -438,96 +495,127 @@ def write_page(path: Path, front_matter: dict, content: str) -> None:
     path.write_text(page, encoding="utf-8")
 
 
-def build_question_front_matter(lang_key: str, section: Section, question: Question, all_sections: dict[str, dict[int, Section]]) -> dict:
-    lang = LANGUAGES[lang_key]
-    return {
-        "layout": "content-page",
-        "kind": "question",
-        "title": question.title,
-        "description": question.summary,
-        "lang": lang["lang_code"],
-        "language_label": lang["label"],
-        "home_url": lang["home_url"],
-        "library_url": site_url(lang_key, "questions"),
-        "section_title": section.label,
-        "section_url": section.url,
-        "section_number": section.number,
-        "question_number": question.position,
-        "source_url": f"{REPOSITORY_URL}/blob/master/{question.source_relative_path}",
-        "prev_title": question.prev_title,
-        "prev_url": question.prev_url,
-        "next_title": question.next_title,
-        "next_url": question.next_url,
-        "alternates": build_alternates(all_sections, section.number, question.position),
-    }
+def generate_search_indexes(all_sections: dict[str, dict[int, Section]]) -> None:
+    data_dir = DOCS_DIR / "assets" / "data"
+    data_dir.mkdir(parents=True, exist_ok=True)
 
-
-def build_section_front_matter(lang_key: str, section: Section, all_sections: dict[str, dict[int, Section]]) -> dict:
-    lang = LANGUAGES[lang_key]
-    text = LOCALIZED_TEXT[lang_key]
-    source_relative = section.navigator_path.relative_to(REPO_ROOT).as_posix()
-    return {
-        "layout": "content-page",
-        "kind": "section",
-        "title": section.label,
-        "description": text["section_description"].format(count=len(section.questions), label=section.label),
-        "lang": lang["lang_code"],
-        "language_label": lang["label"],
-        "home_url": lang["home_url"],
-        "library_url": site_url(lang_key, "questions"),
-        "section_title": section.label,
-        "section_url": section.url,
-        "section_number": section.number,
-        "question_count": len(section.questions),
-        "source_url": f"{REPOSITORY_URL}/blob/master/{source_relative}",
-        "alternates": build_alternates(all_sections, section.number),
-    }
-
-
-def build_library_front_matter(lang_key: str) -> dict:
-    lang = LANGUAGES[lang_key]
-    return {
-        "layout": "content-page",
-        "kind": "library",
-        "title": lang["library_title"],
-        "description": lang["library_description"],
-        "lang": lang["lang_code"],
-        "language_label": lang["label"],
-        "home_url": lang["home_url"],
-        "library_url": site_url(lang_key, "questions"),
-        "alternates": build_library_alternates(),
-    }
+    for lang_key, lang_config in LANGUAGES.items():
+        items = []
+        sections = all_sections[lang_key]
+        for sec in sections.values():
+            for q in sec.questions:
+                items.append({
+                    "id": f"{sec.number}-{q.position}",
+                    "title": q.title,
+                    "secNumber": sec.number,
+                    "secTitle": sec.label,
+                    "icon": sec.icon,
+                    "pos": q.position,
+                    "url": q.url,
+                    "summary": q.summary,
+                })
+        target = data_dir / lang_config["search_file"]
+        target.write_text(json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def generate_pages(all_sections: dict[str, dict[int, Section]]) -> None:
     ensure_clean_output()
 
-    for lang_key, sections in all_sections.items():
+    for lang_key, lang_config in LANGUAGES.items():
+        sections = all_sections[lang_key]
         ordered_sections = [sections[number] for number in sorted(sections)]
 
         for section in ordered_sections:
             assign_prev_next(section)
 
-        output_dir: Path = LANGUAGES[lang_key]["output_dir"]
+        output_dir: Path = lang_config["output_dir"]
+        all_sections_meta = build_sidebar_data(ordered_sections)
 
         write_page(
             output_dir / "index.md",
-            build_library_front_matter(lang_key),
+            {
+                "layout": "content-page",
+                "kind": "library",
+                "title": lang_config["library_title"],
+                "description": lang_config["library_description"],
+                "lang": lang_config["lang_code"],
+                "language_label": lang_config["label"],
+                "language_flag": lang_config["flag"],
+                "home_url": lang_config["home_url"],
+                "library_url": site_url(lang_key, "questions"),
+                "alternates": [
+                    {
+                        "lang": l["lang_code"],
+                        "label": l["label"],
+                        "flag": l["flag"],
+                        "url": site_url(k, "questions"),
+                    }
+                    for k, l in LANGUAGES.items()
+                ] + [{"lang": "x-default", "label": "Default", "flag": "🌐", "url": site_url("eng", "questions")}],
+                "sidebar_sections": all_sections_meta,
+            },
             build_library_content(lang_key, ordered_sections),
         )
 
         for section in ordered_sections:
+            sec_sidebar = build_sidebar_data(ordered_sections, section.number)
+            source_relative = section.navigator_path.relative_to(REPO_ROOT).as_posix()
+            text = LOCALIZED_TEXT[lang_key]
+
             write_page(
                 output_dir / section.slug / "index.md",
-                build_section_front_matter(lang_key, section, all_sections),
+                {
+                    "layout": "content-page",
+                    "kind": "section",
+                    "title": section.label,
+                    "icon": section.icon,
+                    "description": text["section_description"].format(count=len(section.questions), label=section.label),
+                    "lang": lang_config["lang_code"],
+                    "language_label": lang_config["label"],
+                    "language_flag": lang_config["flag"],
+                    "home_url": lang_config["home_url"],
+                    "library_url": site_url(lang_key, "questions"),
+                    "section_title": section.label,
+                    "section_url": section.url,
+                    "section_number": section.number,
+                    "question_count": len(section.questions),
+                    "source_url": f"{REPOSITORY_URL}/blob/master/{source_relative}",
+                    "alternates": build_alternates(all_sections, section.number),
+                    "sidebar_sections": sec_sidebar,
+                },
                 build_section_content(lang_key, section),
             )
             for question in section.questions:
+                q_sidebar = build_sidebar_data(ordered_sections, section.number, question.position)
                 write_page(
                     output_dir / section.slug / question.slug / "index.md",
-                    build_question_front_matter(lang_key, section, question, all_sections),
+                    {
+                        "layout": "content-page",
+                        "kind": "question",
+                        "title": question.title,
+                        "icon": section.icon,
+                        "description": question.summary,
+                        "lang": lang_config["lang_code"],
+                        "language_label": lang_config["label"],
+                        "language_flag": lang_config["flag"],
+                        "home_url": lang_config["home_url"],
+                        "library_url": site_url(lang_key, "questions"),
+                        "section_title": section.label,
+                        "section_url": section.url,
+                        "section_number": section.number,
+                        "question_number": question.position,
+                        "source_url": f"{REPOSITORY_URL}/blob/master/{question.source_relative_path}",
+                        "prev_title": question.prev_title,
+                        "prev_url": question.prev_url,
+                        "next_title": question.next_title,
+                        "next_url": question.next_url,
+                        "alternates": build_alternates(all_sections, section.number, question.position),
+                        "sidebar_sections": q_sidebar,
+                    },
                     build_question_content(question),
                 )
+
+    generate_search_indexes(all_sections)
 
 
 def main() -> None:

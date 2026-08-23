@@ -1,18 +1,26 @@
 ---
 layout: default
-title: Page not found
+title: 404 - Page Not Found
 description: The requested page could not be found.
 permalink: /404.html
 lang: en
 ---
 
-<section class="hero">
-  <span class="eyebrow">404</span>
-  <h1>That page is not here.</h1>
-  <p class="lede">The URL may have changed while the site structure is being expanded. Use the links below to continue from the main Java interview landing pages.</p>
-  <div class="hero-actions">
-    <a class="button button-primary" href="{{ '/' | relative_url }}">Open English Home</a>
-    <a class="button" href="{{ '/ru/' | relative_url }}">Open Russian Home</a>
-    <a class="button" href="{{ site.github.repository_url }}">Open GitHub Repository</a>
+<section class="hero-section">
+  <div class="hero-badge">
+    <span>⚠️ Error 404</span>
+  </div>
+  <h1 class="hero-title">Page Not Found</h1>
+  <p class="hero-subtitle">The page you are looking for might have been moved or renamed during our documentation updates. Use the options below to get back on track:</p>
+
+  <div class="hero-search-box">
+    <input type="text" class="hero-search-input" id="hero-search-input" placeholder="Search 500+ interview questions... (Ctrl+K)" readonly>
+    <svg class="hero-search-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+  </div>
+
+  <div class="hero-actions" style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+    <a class="meta-pill meta-pill-link" style="padding: 10px 20px; font-size: 0.95rem;" href="{{ '/' | relative_url }}">🇬🇧 English Home</a>
+    <a class="meta-pill meta-pill-link" style="padding: 10px 20px; font-size: 0.95rem;" href="{{ '/ru/' | relative_url }}">🇷🇺 Главная (RU)</a>
+    <a class="meta-pill meta-pill-link" style="padding: 10px 20px; font-size: 0.95rem;" href="{{ '/uk/' | relative_url }}">🇺🇦 Головна (UK)</a>
   </div>
 </section>
